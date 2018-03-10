@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap css Links -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Local css File -->
+    <link rel="stylesheet" href="css/index.css">
+
+    <!-- Bootstrap JavaScript Files -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- Title of Game -->
+    <title>Hoot Hoot!</title>
+  </head>
+  <body>
+    <!-- ____________________________set_player_details_state____________________________ -->
+    <!-- ___________________TO SET PLAYER DETAILS LIKE NAME AND AVATAR___________________ -->
+    <div id="set_player_details_state">
+      <!-- Title of Game -->
+      <div class="d-flex p-2 align-items-center justify-content-center flex-row game_header">
+        <h1>Let's Hoot!</h1>
+      </div>
+
+      <!-- Let players input their nicknames -->
+      <div class="d-flex p-main align-items-center justify-content-center flex-column game_main">
+        <!-- Player 1 Nickname Input Field-->
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><h2>P1 Nick</h2></span>
+          </div>
+          <input type="text" class="form-control" id="player1_nickname">
+        </div>
+        <!-- Random assign a avatar to player 1 -->
+        <br><br><br>
+        <!-- Player 2 Nickname Input Field-->
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><h2>P2 Nick</h2></span>
+          </div>
+          <input type="text" class="form-control" id="player2_nickname">
+        </div>
+        <!-- Random assign a avatar to player 1 -->
+      </div>
+
+      <!-- Next button to proceed to set_game_details_state -->
+      <div class="d-flex p-footer align-items-center justify-content-end flex-row game_footer">
+          <button type="button" class="btn btn-primary">Next</button>
+      </div>
+    </div>
+
+    <!-- ____________________________set_game_details_state____________________________ -->
+    <!-- TO SET GAME DETAILS LIKE TOPIC AND DIFFICULTY LEVEL -->
+    <div id="set_game_details_state">
+      <!-- Title of Game -->
+      <div class="d-flex p-2 align-items-center justify-content-center flex-row game_header">
+        <h1>Let's Hoot!</h1>
+      </div>
+
+      <!-- Let players input their nicknames -->
+      <div class="d-flex p-main align-items-center justify-content-center flex-column game_main">
+        <form>
+          <!-- Players choose topic quiz -->
+          <div class="form-group">
+            <label for="exampleFormControlSelect1"><h2>Choose Topic Quiz:</h2></label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>Topics...</option>
+              <option>CSS</option>
+              <option>HTML</option>
+              <option>JavaScript</option>
+            </select>
+          </div>
+          <br><br><br>
+          <!-- Players choose difficulty level -->
+          <div class="form-group">
+            <label for="exampleFormControlSelect1"><h2>Choose Difficulty Level:</h2></label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>Difficulty Level...</option>
+              <option>Easy</option>
+              <option>Medium</option>
+              <option>Hard</option>
+            </select>
+          </div>
+        </form>
+      </div>
+
+      <!-- Next button to proceed to set_game_details_state -->
+      <div class="d-flex p-footer align-items-center justify-content-end flex-row game_footer">
+          <button type="button" class="btn btn-primary">Next</button>
+      </div>
+    </div>
+
+    <!-- ____________________________display_game_details state____________________________ -->
+    <!-- DISPLAY THE DETAILS OF THE GAME AFTER SET UP IS COMPLETED -->
+    <div id="display_game_details_state">
+      <!-- Title of Game -->
+      <div class="d-flex p-2 align-items-center justify-content-center flex-row game_header">
+        <h1>Let's Hoot!</h1>
+      </div>
+
+      <!-- Display number of players and start button -->
+      <div class="d-flex p-2 align-items-center justify-content-between flex-row game_details_header">
+        <h2 id="player_num">2 Players</h2>
+        <button type="button" class="btn btn-primary" id="startgame_bt">Start</button>
+      </div>
+
+      <!-- Display player1 and 2 names -->
+      <div class="d-flex p-2 align-items-center justify-content-around flex-row game_players_names">
+        <h2 id="player1_name_display">P1: Edmund</h2>
+        <h2 id="player2_name_display">P2: Rebekah</h2>
+      </div>
+
+      <!-- Display topic, difficulty level and instructions -->
+      <div class="d-flex p-2 align-items-center justify-content-center flex-column game_details_main">
+        <h2>How to play: </h2>
+        <h5>
+          <li>Players will take turns to answer the same question</li>
+          <li>Players can select options to answer the question or choose to skip</li>
+          <li>Players will earn points based on how they fast an answer is selected</li>
+          <li>Players are not allowed to answer the quiz questions together</li>
+          <li>When each player is answering, the other player is not allowed to look at the screen</li>
+          <li>Discussion can only take place at the end of each question</li>
+        </h5>
+      </div>
+    </div>
+
+    <!-- Local JavaScript File -->
+    <script type="text/javascript" src="js/index.js"></script>
+  </body>
+</html>

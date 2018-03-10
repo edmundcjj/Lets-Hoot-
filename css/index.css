@@ -1,0 +1,135 @@
+
+/* ---------------------------Tags------------------------------------------- */
+html,body{
+  height:100%;
+  font-family: "Montserrat","Helvetica Neue",helvetica,arial,sans-serif;
+}
+body{
+  background-color: #edefec;
+}
+h1{
+  color: #000;
+  margin: 0;
+}
+
+/* ---------------------------Classes---------------------------------------- */
+.game_header{
+  background-color: white;
+  height: 10vh;
+}
+.game_details_header{
+  height: 10vh;
+}
+.game_details_header > h2{
+  font-size: 1.5rem;
+}
+.game_players_names{
+  height: 10vh;
+}
+.game_players_names > h2{
+  font-size: 1.5rem;
+}
+.game_details_main{
+  height: 70vh;
+}
+.game_main{
+  height: 80vh;
+}
+.game_footer{
+  height: 10vh;
+}
+.p-main{
+  padding: .5rem;
+}
+.p-footer{
+  padding: 1rem;
+}
+.btn{
+  font-size: 1.5rem;
+}
+.form-control{
+  font-size: 1.5rem;
+}
+
+
+/* ---------------------------Game State Display--------------------------------------------- */
+#set_player_details_state{
+  display: none;
+}
+#set_game_details_state{
+  display: none;
+}
+#display_game_details_state{
+  display: inline;
+}
+
+
+
+
+
+/* ---------------------------Media Queries---------------------------------- */
+/* Extra small devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {  }
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .p-main{
+    padding: 5rem 10rem 5rem 10rem;
+  }
+  h1{
+    font-size: 3rem;
+  }
+  h2{
+    font-size: 2.5rem;
+  }
+  .game_details_header > h2{
+    font-size: 2.5rem;
+  }
+  .game_players_names > h2{
+    font-size: 2.5rem;
+  }
+  .game_details_main > h5{
+    font-size: 2rem;
+  }
+  .btn{
+    font-size: 2rem;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  h1{
+    font-size: 3.5rem;
+  }
+  h2{
+    font-size: 3rem;
+  }
+  .game_details_header > h2{
+    font-size: 3rem;
+  }
+  .game_players_names > h2{
+    font-size: 3rem;
+  }
+  .game_details_main > h5{
+    font-size: 2.5rem;
+  }
+  .btn{
+    font-size: 2.5rem;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .p-main{
+    padding: 5rem 30rem 5rem 30rem;
+  }
+  .p-footer{
+    padding: .5rem 2rem .5rem 2rem;
+  }
+  .game_details_main > h5{
+    font-size: 2rem;
+  }
+}
