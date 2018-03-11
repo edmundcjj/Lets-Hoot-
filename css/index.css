@@ -86,6 +86,9 @@ h1{
 .game_answering_details{
     height: 50vh;
 }
+.game_answering_details > button{
+  font-weight: bold;
+}
 .game_answering_options_1{
   height: 15vh;
 }
@@ -118,6 +121,7 @@ h1{
 }
 .form-control{
   font-size: 1.5rem;
+  padding: 0;
 }
 .border_timer{
   border: 20px solid #864CBF;
@@ -258,7 +262,7 @@ h1{
 }
 .gameover_header{
   height: 10vh;
-  background-color: #5133a5;
+  background-color: #461f8d;
 }
 .gameover_header > h1{
   color: white;
@@ -385,7 +389,7 @@ No media query since this is the default in Bootstrap */
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   .p-main{
-    padding: 5rem 10rem 5rem 10rem;
+    padding: 5rem 7rem 5rem 7rem;
   }
   h1{
     font-size: 3rem;
