@@ -201,6 +201,77 @@
       </div>
     </div>
 
+    <!-- _____________________________result_state_______________________________ -->
+    <!-- LET PLAYERS IF THEY HAVE CHOSEN THE CORRECT ANSWER AND A BUTTON TO REVEAL THE CORRECT ANSWER -->
+    <div id="result_qns_state">
+      <!-- Current Question and next button -->
+      <div class="d-flex p-2 align-items-center justify-content-between flex-row game_result_header">
+        <h5 id="result_qns_title">Q1: What is the correct HTML for referring to an external style sheet?</h5>
+        <button type="button" name="button" class="btn btn-primary" id="result_qns_nextbt">Next</button>
+      </div>
+
+      <div class="d-flex flex-row game_result_main">
+        <!-- Current stats of player 1 after both players have answered one question -->
+        <div class="d-flex align-items-center justify-content-center flex-column game_result_p1">
+          <!-- Display player 1 name -->
+          <div class="d-flex align-items-center justify-content-center flex-column result_name_header">
+            <h5 id="result_player1_name">Edmund</h5>
+          </div>
+          <br>
+          <!-- Display player 1 stats -->
+          <div class="d-flex align-items-center justify-content-center flex-column result_stats">
+            <h5 id="result_answer_p1_outcome">INCORRECT</h5>
+            <button type="button" name="button" class="btn btn-primary" id="result_p1_reveal">REVEAL</button>
+            <!-- Create bootstrap modal for correct answer if player chooses incorrect answer -->
+            <br><br>
+            <h5 id="result_player1_placing">2nd PLACE</h5>
+            <br><br>
+            <h5 id="result_player1_pts_ahead_behind"> 100 PTS BEHIND</h5>
+          </div>
+          <br>
+          <!-- Display player 1 current total points -->
+          <div class="d-flex align-items-center justify-content-center flex-column result_p1_pts">
+            <h5 id="result_player1_pts">0 pts</h5>
+          </div>
+        </div>
+
+        <!-- Current stats of player 2 after both players have answered one question -->
+        <div class="d-flex align-items-center justify-content-center flex-column game_result_p2">
+          <!-- Display player 2 name -->
+          <div class="d-flex align-items-center justify-content-center flex-column result_name_header">
+            <h5 id="result_player2_name">Rebekah</h5>
+          </div>
+          <br>
+          <!-- Display player 2 stats -->
+          <div class="d-flex align-items-center justify-content-center flex-column result_stats">
+            <h5 id="result_answer_p2_outcome">CORRECT</h5>
+            <button type="button" name="button" class="btn btn-primary" id="result_p2_reveal">REVEAL</button>
+            <!-- Create bootstrap modal for correct answer if player chooses incorrect answer -->
+            <br><br>
+            <h5 id="result_player2_placing">1st PLACE</h5>
+            <br><br>
+            <h5 id="result_player2_pts_ahead_behind"> 100 PTS AHEAD</h5>
+          </div>
+          <br>
+          <!-- Display player 2 current total points -->
+          <div class="d-flex align-items-center justify-content-center flex-column result_p2_pts">
+            <h5 id="result_player2_pts">50 pts</h5>
+          </div>
+      </div>
+    </div>
+
+    <!-- _____________________________scoreboard_state___________________________ -->
+    <!-- DISPLAY SCOREBOARD BASED ON CURRENT SCORE OF BOTH PLAYERS -->
+    <div id="scoreboard_state">
+
+    </div>
+
+    <!-- ____________________________game_over_state_____________________________ -->
+    <!-- DISPLAY THE PLAYERS PODIUM -->
+    <div id="game_over_state">
+
+    </div>
+
     <!-- Local JavaScript File -->
     <script type="text/javascript" src="js/index.js"></script>
   </body>

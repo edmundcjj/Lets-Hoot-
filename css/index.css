@@ -5,7 +5,7 @@ html,body{
   font-family: "Montserrat","Helvetica Neue",helvetica,arial,sans-serif;
 }
 body{
-  background-color: #edefec;
+  background-color: #f2f2f2;
 }
 h1{
   color: #000;
@@ -114,7 +114,7 @@ h1{
   padding: 1rem;
 }
 .btn{
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 .form-control{
   font-size: 1.5rem;
@@ -168,8 +168,65 @@ h1{
 .game_answering_options_2 > .answering_option4:hover{
   background-color: #62C447;
 }
+.game_result_header{
+  height: 10vh;
+  background-color: white;
+}
+.game_result_header > h5{
+  font-size: 1rem;
+  padding-right: .5rem;
+}
+.game_result_main{
+  height: 90vh;
+}
+.game_result_p1{
+  width: 100vh;
+  background-color: #3F51B5;
+  color: white;
+}
+.game_result_p2{
+  width: 100vh;
+  background-color: #4CAF50;
+  color: white;
+}
+.result_name_header{
+  height: 10vh;
+}
+.result_name_header > h5{
+  font-weight: bold;
+}
+.result_stats{
+  height: 70vh;
+}
+.result_stats > h5{
+  font-weight: bold;
+}
+.result_stats > button{
+  background-color: #333333;
+  border: #333333;
+}
+.result_p1_pts{
+  height: 10vh;
+  width: 100%;
+  background-color: #1A237E;
+}
+.result_p1_pts > h5{
+  font-weight: bold;
+  margin: 0;
+}
+.result_p2_pts{
+  height: 10vh;
+  width: 100%;
+  background-color: #1B5E20;
+}
+.result_p2_pts > h5{
+  font-weight: bold;
+  margin: 0;
+}
 
-/* ---------------------------Game State Display--------------------------------------------- */
+
+
+/* ---------------------------Game States Display--------------------------------------------- */
 #set_player_details_state{
   display: none;
 }
@@ -183,7 +240,22 @@ h1{
   display: none;
 }
 #answering_qns_state{
+  display: none;
+}
+#result_qns_state{
   display: inline;
+}
+#result_p1_reveal{
+  display: none;
+}
+#result_p2_reveal{
+  display: none;
+}
+#scoreboard_state{
+  display: none;
+}
+#game_over_state{
+  display: none;
 }
 
 
@@ -240,6 +312,21 @@ No media query since this is the default in Bootstrap */
   .game_answering_header > h5{
     font-size: 2rem;
   }
+  .game_result_header > h5{
+    font-size: 2rem;
+  }
+  .result_name_header > h5{
+    font-size: 2rem;
+  }
+  .result_stats > h5{
+    font-size: 2rem;
+  }
+  .result_p1_pts > h5{
+    font-size: 2rem;
+  }
+  .result_p2_pts > h5{
+    font-size: 2rem;
+  }
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -287,6 +374,21 @@ No media query since this is the default in Bootstrap */
   .game_answering_header > h5{
     font-size: 2.5rem;
   }
+  .game_result_header > h5{
+    font-size: 2.5rem;
+  }
+  .result_name_header > h5{
+    font-size: 2.5rem;
+  }
+  .result_stats > h5{
+    font-size: 2.5rem;
+  }
+  .result_p1_pts > h5{
+    font-size: 2.5rem;
+  }
+  .result_p2_pts > h5{
+    font-size: 2.5rem;
+  }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
@@ -301,6 +403,9 @@ No media query since this is the default in Bootstrap */
     font-size: 2rem;
   }
   .game_answering_header > h5{
+    font-size: 3rem;
+  }
+  .game_result_header > h5{
     font-size: 3rem;
   }
 }
