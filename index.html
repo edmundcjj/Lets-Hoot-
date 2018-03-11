@@ -201,6 +201,72 @@
       </div>
     </div>
 
+    <!-- _____________________________scoreboard_state___________________________ -->
+    <!-- DISPLAY SCOREBOARD BASED ON CURRENT SCORE OF BOTH PLAYERS -->
+    <div id="score_board_state">
+      <!-- Scoreboard Header -->
+      <div class="d-flex p-2 align-items-center justify-content-center flex-row scoreboard_header">
+        <h1>Scoreboard</h1>
+      </div>
+
+      <!-- Next button on score_board_state -->
+      <div class="d-flex p-2 align-items-center justify-content-end flex-row scoreboard_nextbt">
+        <button type="button" name="button" class="btn btn-primary" id="scoreboard_nextbt">Next</button>
+      </div>
+
+      <!-- Display scoreboard of players current total points -->
+      <div class="d-flex p-2 align-items-center justify-content-center flex-column scoreboard_main">
+        <div class="d-flex p-2 align-items-center justify-content-between flex-row scoreboard_p1">
+          <h5 id="scoreboard_p1_name">Edmund</h5>
+          <h5 id="scoreboard_p1">100</h5>
+        </div>
+        <br><br><br>
+        <div class="d-flex p-2 align-items-center justify-content-between flex-row scoreboard_p2">
+          <h5 id="scoreboard_p2_name">Rebekah</h5>
+          <h5 id="scoreboard_p2">200</h5>
+        </div>
+      </div>
+    </div>
+
+    <!-- ____________________________game_over_state_____________________________ -->
+    <!-- DISPLAY THE PLAYERS PODIUM -->
+    <div id="gameover_state">
+      <!-- Podium Header -->
+      <div class="d-flex p-2 align-items-center justify-content-center flex-row gameover_header">
+        <h1>Podium</h1>
+      </div>
+
+      <!-- Display buttons for playagain and reset -->
+      <div class="d-flex p-3 align-items-end justify-content-center flex-column gameover_buttons">
+        <button type="button" name="button" class="btn btn-primary" id="gameover_playagain_bt">REPLAY</button>
+        <br>
+        <button type="button" name="button" class="btn btn-primary" id="gameover_reset_bt">RESET</button>
+      </div>
+
+      <!-- Display players podium -->
+      <div class="d-flex align-items-center justify-content-center flex-row gameover_podium">
+        <!-- Podium for 2nd place player -->
+        <div class="d-flex p-10 align-items-center justify-content-end flex-column podium_2nd_place">
+          <h5 class="d-flex align-items-center justify-content-center flex-row" id="gameover_podium_2nd_place_name"><img src="img/silver-medal.png" alt="" class="img-thumbnail podium_silver_medal">Edmund</h5>
+          <br>
+          <div class="d-flex p-2 align-items-center justify-content-start flex-column second_place_boxed">
+            <h5 class="podium_2nd_points" id="podium_2nd_points">300 points</h5>
+            <h5 id="podium_2nd_qns_correct">7 out of 10</h5>
+          </div>
+        </div>
+
+        <!-- Podium for 1st place player -->
+        <div class="d-flex p-10 align-items-center justify-content-end flex-column podium_1st_place">
+          <h5 class="d-flex align-items-center justify-content-center flex-row" id="gameover_podium_1st_place_name"><img src="img/gold-medal.png" alt="" class="img-thumbnail podium_gold_medal">Rebekah</h5>
+          <br>
+          <div class="d-flex p-2 align-items-center justify-content-start flex-column first_place_boxed">
+            <h5 class="podium_1st_points" id="podium_1st_points">200 points</h5>
+            <h5 id="podium_1st_qns_correct">5 out of 10</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- _____________________________result_state_______________________________ -->
     <!-- LET PLAYERS IF THEY HAVE CHOSEN THE CORRECT ANSWER AND A BUTTON TO REVEAL THE CORRECT ANSWER -->
     <div id="result_qns_state">
@@ -224,7 +290,7 @@
             <button type="button" name="button" class="btn btn-primary" id="result_p1_reveal">REVEAL</button>
             <!-- Create bootstrap modal for correct answer if player chooses incorrect answer -->
             <br><br>
-            <h5 id="result_player1_placing">2nd PLACE</h5>
+            <h5 id="result_player1_placing">2ND PLACE</h5>
             <br><br>
             <h5 id="result_player1_pts_ahead_behind"> 100 PTS BEHIND</h5>
           </div>
@@ -248,7 +314,7 @@
             <button type="button" name="button" class="btn btn-primary" id="result_p2_reveal">REVEAL</button>
             <!-- Create bootstrap modal for correct answer if player chooses incorrect answer -->
             <br><br>
-            <h5 id="result_player2_placing">1st PLACE</h5>
+            <h5 id="result_player2_placing">1ST PLACE</h5>
             <br><br>
             <h5 id="result_player2_pts_ahead_behind"> 100 PTS AHEAD</h5>
           </div>
@@ -258,18 +324,6 @@
             <h5 id="result_player2_pts">50 pts</h5>
           </div>
       </div>
-    </div>
-
-    <!-- _____________________________scoreboard_state___________________________ -->
-    <!-- DISPLAY SCOREBOARD BASED ON CURRENT SCORE OF BOTH PLAYERS -->
-    <div id="scoreboard_state">
-
-    </div>
-
-    <!-- ____________________________game_over_state_____________________________ -->
-    <!-- DISPLAY THE PLAYERS PODIUM -->
-    <div id="game_over_state">
-
     </div>
 
     <!-- Local JavaScript File -->

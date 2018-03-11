@@ -223,6 +223,121 @@ h1{
   font-weight: bold;
   margin: 0;
 }
+.scoreboard_header{
+  height: 10vh;
+  background-color: white;
+}
+.scoreboard_nextbt{
+  height: 10vh;
+  background-color: #f5a23d;
+}
+.scoreboard_nextbt > button{
+  background-color: #45a3e5;
+  border: #45a3e5;
+  font-size: 1.5rem;
+}
+.scoreboard_main{
+  height: 80vh;
+  background-color: #f5a23d;
+}
+.scoreboard_p1{
+  background-color: white;
+  width: 60%;
+}
+.scoreboard_p1 > h5{
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.scoreboard_p2{
+  background-color: white;
+  width: 60%;
+}
+.scoreboard_p2 > h5{
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.gameover_header{
+  height: 10vh;
+  background-color: #5133a5;
+}
+.gameover_header > h1{
+  color: white;
+  font-weight: bold;
+}
+.gameover_buttons{
+  height: 20vh;
+  background-color: #5133a5;
+}
+.gameover_buttons > button{
+  background-color: #ff4081;
+  border: #ff4081;
+  font-weight: bold;
+}
+.gameover_podium{
+  height: 70vh;
+  background-color: #5133a5;
+}
+.podium_2nd_place{
+  width: 100vh;
+  height: 70vh;
+}
+.podium_2nd_place > h5{
+  background-color: #461f8d;
+  width: 80%;
+  height: 10%;
+  color: white;
+  font-weight: bold;
+}
+.podium_1st_place{
+  width: 100vh;
+  height: 70vh;
+}
+.podium_1st_place > h5{
+  background-color: #461f8d;
+  width: 80%;
+  height: 10%;
+  color: white;
+  font-weight: bold;
+}
+.second_place_boxed{
+  background-color: #8550bc;
+  border: 3px solid #8550bc;
+  height: 60%;
+  width: 80%;
+  padding-bottom: .5rem;
+}
+.second_place_boxed > h5{
+  color: white;
+}
+.podium_1st_points{
+  font-weight: bold;
+}
+.first_place_boxed{
+  background-color: #8550bc;
+  border: 3px solid #8550bc;
+  height: 80%;
+  width: 80%;
+  padding-bottom: .5rem;
+}
+.first_place_boxed > h5{
+  color: white;
+}
+.podium_2nd_points{
+  font-weight: bold;
+}
+.p-10{
+  padding-bottom: 2rem;
+}
+.podium_gold_medal{
+  margin-right: .5rem;
+  height: 40px;
+  width: 40px;
+}
+.podium_silver_medal{
+  margin-right: .5rem;
+  height: 40px;
+  width: 40px;
+}
 
 
 
@@ -243,7 +358,7 @@ h1{
   display: none;
 }
 #result_qns_state{
-  display: inline;
+  display: none;
 }
 #result_p1_reveal{
   display: none;
@@ -251,11 +366,11 @@ h1{
 #result_p2_reveal{
   display: none;
 }
-#scoreboard_state{
+#score_board_state{
   display: none;
 }
-#game_over_state{
-  display: none;
+#gameover_state{
+  display: inline;
 }
 
 
@@ -327,6 +442,37 @@ No media query since this is the default in Bootstrap */
   .result_p2_pts > h5{
     font-size: 2rem;
   }
+  .scoreboard_nextbt > button{
+    font-size: 2rem;
+  }
+  .scoreboard_p1 > h5{
+    font-size: 2rem;
+  }
+  .scoreboard_p2 > h5{
+    font-size: 2rem;
+  }
+  .podium_2nd_place > h5{
+    font-size: 2rem;
+  }
+  .podium_1st_place > h5{
+    font-size: 2rem;
+  }
+  .podium_gold_medal{
+    margin-right: 1rem;
+    height: 74px;
+    width: 74px;
+  }
+  .podium_silver_medal{
+    margin-right: 1rem;
+    height: 74px;
+    width: 74px;
+  }
+  .first_place_boxed > h5{
+    font-size: 2rem;
+  }
+  .second_place_boxed > h5{
+    font-size: 2rem;
+  }
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -389,6 +535,37 @@ No media query since this is the default in Bootstrap */
   .result_p2_pts > h5{
     font-size: 2.5rem;
   }
+  .scoreboard_nextbt > button{
+    font-size: 2.5rem;
+  }
+  .scoreboard_p1 > h5{
+    font-size: 2.5rem;
+  }
+  .scoreboard_p2 > h5{
+    font-size: 2.5rem;
+  }
+  .podium_2nd_place > h5{
+    font-size: 2.5rem;
+  }
+  .podium_1st_place > h5{
+    font-size: 2.5rem;
+  }
+  .podium_gold_medal{
+    margin-right: 1rem;
+    height: 100px;
+    width: 100px;
+  }
+  .podium_silver_medal{
+    margin-right: 1rem;
+    height: 100px;
+    width: 100px;
+  }
+  .first_place_boxed > h5{
+    font-size: 2.5rem;
+  }
+  .second_place_boxed > h5{
+    font-size: 2.5rem;
+  }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
@@ -407,5 +584,15 @@ No media query since this is the default in Bootstrap */
   }
   .game_result_header > h5{
     font-size: 3rem;
+  }
+  .podium_gold_medal{
+    margin-right: 1rem;
+    height: 100px;
+    width: 100px;
+  }
+  .podium_silver_medal{
+    margin-right: 1rem;
+    height: 100px;
+    width: 100px;
   }
 }
