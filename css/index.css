@@ -347,7 +347,7 @@ h1{
 
 /* ---------------------------Game States Display--------------------------------------------- */
 #set_player_details_state{
-  display: none;
+  display: inline;
 }
 #set_game_details_state{
   display: none;
@@ -374,7 +374,7 @@ h1{
   display: none;
 }
 #gameover_state{
-  display: inline;
+  display: none;
 }
 
 

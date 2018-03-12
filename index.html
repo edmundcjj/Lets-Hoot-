@@ -50,7 +50,7 @@
 
       <!-- Next button to proceed to set_game_details_state -->
       <div class="d-flex p-footer align-items-center justify-content-end flex-row game_footer">
-          <button type="button" class="btn btn-primary">Next</button>
+          <button type="button" class="btn btn-primary" id="set_player_details_nextbt">Next</button>
       </div>
     </div>
 
@@ -68,7 +68,7 @@
           <!-- Players choose topic quiz -->
           <div class="form-group">
             <label for="exampleFormControlSelect1"><h2 class="topic_label">Choose Topic Quiz:</h2></label>
-            <select class="form-control" id="exampleFormControlSelect1">
+            <select class="form-control" id="topic_quiz_selection">
               <option>Topics...</option>
               <option>CSS</option>
               <option>HTML</option>
@@ -79,7 +79,7 @@
           <!-- Players choose difficulty level -->
           <div class="form-group">
             <label for="exampleFormControlSelect1"><h2 class="difficulty_label">Choose Difficulty Level:</h2></label>
-            <select class="form-control" id="exampleFormControlSelect1">
+            <select class="form-control" id="difficulty_level_selection">
               <option>Difficulty Level...</option>
               <option>Easy</option>
               <option>Medium</option>
@@ -91,7 +91,7 @@
 
       <!-- Next button to proceed to set_game_details_state -->
       <div class="d-flex p-footer align-items-center justify-content-end flex-row game_footer">
-          <button type="button" class="btn btn-primary">Next</button>
+          <button type="button" class="btn btn-primary" id="game_details_nextbt">Next</button>
       </div>
     </div>
 
@@ -111,8 +111,8 @@
 
       <!-- Display player1 and 2 names -->
       <div class="d-flex p-2 align-items-center justify-content-around flex-row game_players_names">
-        <h2 id="player1_name_display">P1: Edmund</h2>
-        <h2 id="player2_name_display">P2: Rebekah</h2>
+        <!-- <h2 id="player1_name_display">P1: Edmund</h2> -->
+        <!-- <h2 id="player2_name_display">P2: Rebekah</h2> -->
       </div>
 
       <!-- Display topic, difficulty level and instructions -->
@@ -136,19 +136,19 @@
     <div id="get_ready_qns_state">
       <!-- Current Question Number -->
       <div class="d-flex p-2 align-items-center justify-content-center flex-row getready_header">
-        <h1 id="getready_qnsofqns">Question 1 of 10</h1>
+        <!-- <h1 id="getready_qnsofqns">Question 1 of 10</h1> -->
       </div>
 
       <!-- Progress Bar to show remaining time left to read question-->
       <div class="game_loader_bar">
         <div class="progress">
-          <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+          <div class="progress-bar progress-bar-striped progress-bar-animated" id="progress_bar" role="progressbar"></div>
         </div>
       </div>
 
       <!-- Display question -->
       <div class="d-flex p-main align-items-center justify-content-center flex-row game_qns_title_main">
-        <h1 id="getready_qns_title">What is the correct HTML for referring to an external style sheet?</h1>
+        <!-- <h1 id="getready_qns_title">What is the correct HTML for referring to an external style sheet?</h1> -->
       </div>
 
       <!-- Display question number of total question -->
