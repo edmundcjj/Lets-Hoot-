@@ -431,7 +431,8 @@ var quiz_questions = {
      "total_pts": 0,
      "answer_chosen": "",
      "answer_correct": false,
-     "answering_now": false
+     "answering_now": false,
+     "correct_answers": 0
    },
    "player2": {
      "nickname": "",
@@ -439,7 +440,8 @@ var quiz_questions = {
      "total_pts": 0,
      "answer_chosen": "",
      "answer_correct": false,
-     "answering_now": false
+     "answering_now": false,
+     "correct_answers": 0
    }
  }
 
@@ -650,8 +652,10 @@ function option1_handler(){
 
     // Update Player 1 answer_correct variable depending what player 1 has chosen
     if (quiz_questions.topics[topic_quiz][current_qns_count].answer === "option_1") {
+      // Player 1 has chosen the correct answer, increment correct_answers by 1
       players.player1.answer_correct = true;
       console.log("Player 1 has selected the correct answer");
+      players.player1.correct_answers += 1;
 
       // Update player1 current points for the question
       players.player1.current_pts = 50;
@@ -692,8 +696,10 @@ function option1_handler(){
 
     // Update Player 2 answer_correct variable depending what player 2 has chosen
     if (quiz_questions.topics[topic_quiz][current_qns_count].answer === "option_1") {
+      // Player 2 has chosen the correct answer, increment correct_answers by 1
       players.player2.answer_correct = true;
       console.log("Player 2 has chosen the correct answer");
+      players.player2.correct_answers += 1;
 
       // Update player2 current points for the question
       players.player2.current_pts = 50;
@@ -737,6 +743,7 @@ function option2_handler(){
     if (quiz_questions.topics[topic_quiz][current_qns_count].answer === "option_2") {
       players.player1.answer_correct = true;
       console.log("Player 1 has selected the correct answer");
+      players.player1.correct_answers += 1;
 
       // Update player1 current points for the question
       players.player1.current_pts = 50;
@@ -779,6 +786,7 @@ function option2_handler(){
     if (quiz_questions.topics[topic_quiz][current_qns_count].answer === "option_2") {
       players.player2.answer_correct = true;
       console.log("Player 2 has chosen the correct answer");
+      players.player2.correct_answers += 1;
 
       // Update player2 current points for the question
       players.player2.current_pts = 50;
@@ -822,6 +830,7 @@ function option3_handler(){
     if (quiz_questions.topics[topic_quiz][current_qns_count].answer === "option_3") {
       players.player1.answer_correct = true;
       console.log("Player 1 has selected the correct answer");
+      players.player1.correct_answers += 1;
 
       // Update player1 current points for the question
       players.player1.current_pts = 50;
@@ -864,6 +873,7 @@ function option3_handler(){
     if (quiz_questions.topics[topic_quiz][current_qns_count].answer === "option_3") {
       players.player2.answer_correct = true;
       console.log("Player 2 has chosen the correct answer");
+      players.player2.correct_answers += 1;
 
       // Update player2 current points for the question
       players.player2.current_pts = 50;
@@ -907,6 +917,7 @@ function option4_handler(){
     if (quiz_questions.topics[topic_quiz][current_qns_count].answer === "option_4") {
       players.player1.answer_correct = true;
       console.log("Player 1 has selected the correct answer");
+      players.player1.correct_answers += 1;
 
       // Update player1 current points for the question
       players.player1.current_pts = 50;
@@ -949,6 +960,7 @@ function option4_handler(){
     if (quiz_questions.topics[topic_quiz][current_qns_count].answer === "option_4") {
       players.player2.answer_correct = true;
       console.log("Player 2 has chosen the correct answer");
+      players.player2.correct_answers += 1;
 
       // Update player2 current points for the question
       players.player2.current_pts = 50;
@@ -1179,6 +1191,39 @@ function scoreboard_nextbt_handler(){
     toggle_state('score_board_state', 'gameover_state');
 
     // Add event listener for buttons in gameover_state
+    // document.getElementById('gameover_replay_bt').addEventListener('click', replay_handler);
+    // document.getElementById('gameover_reset_bt').addEventListener('click', reset_handler);
+  }
+}
+
+// Function to populate gameover_state
+function populate_gameover(){
+  // Populate player 1 and 2 name
+  // Player 2 --> 2nd place, Player 1 --> 1st place
+  if (players.player1.total_pts > players.player2.total_pts) {
+    document.getElementById('gameover_podium_2nd_place_name').innerHTML = players.player2.nickname;
+    document.getElementById('gameover_podium_1st_place_name').innerHTML = players.player1.nickname;
+
+    // Populate total points for both players
+    document.getElementById('podium_2nd_points').innerHTML = players.player2.total_pts;
+    document.getElementById('podium_1st_points').innerHTML = players.player1.total_pts;
+
+    // Populate number of questions that players have chosen the correct answer
+    document.getElementById('podium_2nd_qns_correct').innerHTML = players.player2.correct_answers + " out of 10";
+    document.getElementById('podium_1st_qns_correct').innerHTML = players.player1.correct_answers + " out of 10";
+  }
+  // Player 2 --> 1st place, Player 1 --> 2nd place
+  else if (players.player1.total_pts < players.player2.total_pts) {
+    document.getElementById('gameover_podium_2nd_place_name').innerHTML = players.player1.nickname;
+    document.getElementById('gameover_podium_1st_place_name').innerHTML = players.player2.nickname;
+
+    // Populate total points for both players
+    document.getElementById('podium_2nd_points').innerHTML = players.player1.total_pts;
+    document.getElementById('podium_1st_points').innerHTML = players.player2.total_pts;
+
+    // Populate number of questions that players have chosen the correct answer
+    document.getElementById('podium_2nd_qns_correct').innerHTML = players.player1.correct_answers + " out of 10";
+    document.getElementById('podium_1st_qns_correct').innerHTML = players.player2.correct_answers + " out of 10";
   }
 }
 
