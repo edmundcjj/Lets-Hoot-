@@ -14,6 +14,7 @@ var maxprogress = 110;                        // when to leave stop running the 
 var time_to_answer = 0;                       // Current time in secs to answer question
 var timer;
 var replay_counter = 0;
+var reset_counter = 0;
 
 
 // ------------------------------- Objects -------------------------------------
@@ -485,32 +486,41 @@ var quiz_questions = {
  // Function to display game details before game starts
  function populate_game_details(){
    console.log("Populating game details now...");
+   if (reset_counter > 0) {
+     // Populate content for display_game_details_state
+     document.getElementById('player1_name_display').innerHTML = "P1: " + players.player1.nickname;
+     document.getElementById('player2_name_display').innerHTML = "P2: " + players.player2.nickname;
+   }
+   else {
+     // Create 2 h2 elements to display the player 1 and 2 nicknames
+     var player1_name = document.createElement('h2');
+     var player2_name = document.createElement('h2');
 
-   // Create 2 h2 elements to display the player 1 and 2 nicknames
-   var player1_name = document.createElement('h2');
-   var player2_name = document.createElement('h2');
+     // Assign ids to the h2 elements created above
+     player1_name.id = "player1_name_display";
+     player2_name.id = "player2_name_display";
 
-   // Assign ids to the h2 elements created above
-   player1_name.id = "player1_name_display";
-   player2_name.id = "player2_name_display";
+     // Populate their innerHTML with the appriopriate text
+     player1_name.innerHTML = "P1: " + players.player1.nickname;
+     console.log(player1_name);
+     player2_name.innerHTML = "P2: " + players.player2.nickname;
+     console.log(player2_name);
 
-   // Populate their innerHTML with the appriopriate text
-   player1_name.innerHTML = "P1: " + players.player1.nickname;
-   console.log(player1_name);
-   player2_name.innerHTML = "P2: " + players.player2.nickname;
-   console.log(player2_name);
-
-   // Append the h2 elements to the parent class
-   document.getElementsByClassName('game_players_names')[0].appendChild(player1_name);
-   document.getElementsByClassName('game_players_names')[0].appendChild(player2_name);
-
+     // Append the h2 elements to the parent class
+     document.getElementsByClassName('game_players_names')[0].appendChild(player1_name);
+     document.getElementsByClassName('game_players_names')[0].appendChild(player2_name);
+   }
    console.log("Finished populating game details");
  }
 
  // Function to display question number out of total questions
  function populate_question_of_total_question(){
    console.log("Populating question of total question now...");
-   if (replay_counter > 0) {
+   if (reset_counter > 0) {
+     // Update h1 element with the correct qns number
+     document.getElementById('getready_qnsofqns').innerHTML = "Question " + (current_qns_count+1) + " of " + total_questions;
+   }
+   else if (replay_counter > 0) {
      // Update h1 element with the correct qns number
      document.getElementById('getready_qnsofqns').innerHTML = "Question " + (current_qns_count+1) + " of " + total_questions;
    }
@@ -531,7 +541,14 @@ var quiz_questions = {
  // Function to display question title
  function populate_question_title(){
    console.log("Populating question title now...");
-   if (replay_counter > 0) {
+   if (reset_counter > 0) {
+     // Update h1 element with the correct qns title
+     document.getElementById('getready_qns_title').innerHTML = quiz_questions.topics[topic_quiz][current_qns_count].title;
+
+     // Save qns title to a global variable
+     current_qns_title = quiz_questions.topics[topic_quiz][current_qns_count].title;
+   }
+   else if (replay_counter > 0) {
      // Update h1 element with the correct qns title
      document.getElementById('getready_qns_title').innerHTML = quiz_questions.topics[topic_quiz][current_qns_count].title;
 
@@ -1051,6 +1068,10 @@ function populate_results(){
   // Display current question title
   document.getElementById('result_qns_title').innerHTML = current_qns_title;
 
+  // Display players name on the results page
+  document.getElementById('result_player1_name').innerHTML = players.player1.nickname;
+  document.getElementById('result_player2_name').innerHTML = players.player2.nickname;
+
   // Display outcome of answer chosen by player 1
   if (players.player1.answer_correct === false) {
     // Player 1 answer is incorrect
@@ -1204,13 +1225,13 @@ function scoreboard_nextbt_handler(){
     toggle_state('score_board_state', 'gameover_state');
 
     // Add event listener for buttons in gameover_state
-    document.getElementById('gameover_replay_bt').addEventListener('click', replay_handler);
-    // document.getElementById('gameover_reset_bt').addEventListener('click', reset_handler);
+    document.getElementById('gameover_replay_bt').addEventListener('click', replay_game_handler);
+    document.getElementById('gameover_reset_bt').addEventListener('click', reset_game_handler);
   }
 }
 
 // Function to handle replay button click event
-function replay_handler(){
+function replay_game_handler(){
   // Reset current_qns_count to 0
   current_qns_count = 0;
 
@@ -1247,9 +1268,59 @@ function replay_handler(){
   start_game_button.addEventListener('click', populate_quiz_question);
 }
 
-// Function to hndle reset button click event
-function reset_handler(){
+// Function to reset players object attributes
+function reset_players_object(){
+  // Reset players object
+  players.player1.nickname = "";
+  players.player1.current_pts = 0;
+  players.player1.total_pts = 0;
+  players.player1.answer_chosen = "";
+  players.player1.answer_correct = false;
+  players.player1.answering_now = false;
+  players.player1.correct_answers = 0;
 
+  players.player2.nickname = "";
+  players.player2.current_pts = 0;
+  players.player2.total_pts = 0;
+  players.player2.answer_chosen = "";
+  players.player2.answer_correct = false;
+  players.player2.answering_now = false;
+  players.player2.correct_answers = 0;
+}
+
+// Function to hndle reset button click event
+function reset_game_handler(){
+  // Reset current_qns_count to 0
+  current_qns_count = 0;
+
+  // Reset players object data values
+  reset_players_object();
+
+  // Reset get_ready_qns_state progress loader bar width to 0%
+  document.getElementById('progress_bar').style.width = "0%";
+
+  // Reset input fields to be empty for set_player_details_state
+  document.getElementById('player1_nickname').value = "";
+  document.getElementById('player2_nickname').value = "";
+
+  // Reset drop down list to default in set_game_details_state
+  document.getElementById("topic_quiz_selection").selectedIndex = "0";
+  document.getElementById("difficulty_level_selection").selectedIndex = "0";
+
+  // // Reset content for get_ready_qns_state to it's default state
+  // var qns_number_header = document.getElementsByClassName('getready_header');
+  // qns_number_header.removeChild(qns_number_header.firstChild);
+  // var qns_name = document.getElementsByClassName('game_qns_title_main');
+  // qns_name.removeChild(qns_name.firstChild);
+
+  // Increment reset_counter by 1
+  reset_counter += 1;
+
+  // Toggle state to set_player_details_state
+  toggle_state('gameover_state', 'set_player_details_state');
+
+  // Start game from the beginning state
+  start_game();
 }
 
 // Function to populate gameover_state
@@ -1347,6 +1418,10 @@ function populate_answering_content_for_player1(){
       document.getElementById('answering_qns_title').innerHTML = current_qns_title;
       document.getElementById('answering_player_turn').innerHTML = players.player1.nickname + "'s turn to answer...";
     }
+    else if (reset_counter > 0) {
+      document.getElementById('answering_qns_title').innerHTML = current_qns_title;
+      document.getElementById('answering_player_turn').innerHTML = players.player1.nickname + "'s turn to answer...";
+    }
     else {
       // Create h5 element for current question title
       var current_qns = document.createElement('h5');
@@ -1404,8 +1479,8 @@ function populate_answering_content_for_player1(){
   document.getElementById('answering_option4').innerHTML = option4;
 }
 
-// -----------------------------Main Game--------------------------------------
-window.onload = function(){
+// Function to start the game running from the first state onwards
+function start_game(){
   // Make the first state visible - set_player_details_state
   document.getElementById('set_player_details_state').display = "inline";
 
@@ -1445,4 +1520,9 @@ window.onload = function(){
   // Add event listener on startgame_bt id
   var start_game_button = document.getElementById('startgame_bt');
   start_game_button.addEventListener('click', populate_quiz_question);
+}
+
+// -----------------------------Main Game--------------------------------------
+window.onload = function(){
+  start_game();
 }
