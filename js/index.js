@@ -12,9 +12,9 @@ var timeout = 50;                             // number of milliseconds between 
 var increment = .5;                           // increment for each frame
 var maxprogress = 110;                        // when to leave stop running the animation
 var time_to_answer = 0;                       // Current time in secs to answer question
-var timer;
-var replay_counter = 0;
-var reset_counter = 0;
+var timer;                                    // Interval timer for countdown timer
+var replay_counter = 0;                       // To keep track the number of times the game has been replayed
+var reset_counter = 0;                        // To keep track the number of times the game has been reset
 
 
 // ------------------------------- Objects -------------------------------------
