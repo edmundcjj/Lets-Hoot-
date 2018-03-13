@@ -13,6 +13,7 @@ var increment = .5;                           // increment for each frame
 var maxprogress = 110;                        // when to leave stop running the animation
 var time_to_answer = 0;                       // Current time in secs to answer question
 var timer;
+var replay_counter = 0;
 
 
 // ------------------------------- Objects -------------------------------------
@@ -509,17 +510,20 @@ var quiz_questions = {
  // Function to display question number out of total questions
  function populate_question_of_total_question(){
    console.log("Populating question of total question now...");
-   // Find out how many questions are there in each topic
-   // total_questions = quiz_questions.topics[topic_quiz].length;
+   if (replay_counter > 0) {
+     // Update h1 element with the correct qns number
+     document.getElementById('getready_qnsofqns').innerHTML = "Question " + (current_qns_count+1) + " of " + total_questions;
+   }
+   else {
+     // Create h1 element, assign id and populate innerHTML
+     var qns_of_qns = document.createElement('h1');
+     qns_of_qns.id = "getready_qnsofqns";
+     qns_of_qns.innerHTML = "Question " + (current_qns_count+1) + " of " + total_questions;
 
-   // Create h1 element, assign id and populate innerHTML
-   var qns_of_qns = document.createElement('h1');
-   qns_of_qns.id = "getready_qnsofqns";
-   qns_of_qns.innerHTML = "Question " + (current_qns_count+1) + " of " + total_questions;
-
-   // Append h1 element to parent class
-   // Display question number out of total questions
-   document.getElementsByClassName('getready_header')[0].appendChild(qns_of_qns);
+     // Append h1 element to parent class
+     // Display question number out of total questions
+     document.getElementsByClassName('getready_header')[0].appendChild(qns_of_qns);
+   }
 
    console.log("Finished populating question of total question now...");
  }
@@ -527,16 +531,25 @@ var quiz_questions = {
  // Function to display question title
  function populate_question_title(){
    console.log("Populating question title now...");
-   // Create h1 element, assign id and populate innerHTML
-   var qns_title = document.createElement('h1');
-   qns_title.id = "getready_qns_title";
-   qns_title.innerHTML = quiz_questions.topics[topic_quiz][current_qns_count].title;
+   if (replay_counter > 0) {
+     // Update h1 element with the correct qns title
+     document.getElementById('getready_qns_title').innerHTML = quiz_questions.topics[topic_quiz][current_qns_count].title;
 
-   // Append h1 element to parent class and display question title
-   document.getElementsByClassName('game_qns_title_main')[0].appendChild(qns_title);
+     // Save qns title to a global variable
+     current_qns_title = quiz_questions.topics[topic_quiz][current_qns_count].title;
+   }
+   else {
+     // Create h1 element, assign id and populate innerHTML
+     var qns_title = document.createElement('h1');
+     qns_title.id = "getready_qns_title";
+     qns_title.innerHTML = quiz_questions.topics[topic_quiz][current_qns_count].title;
 
-   // Save qns title to a global variable
-   current_qns_title = quiz_questions.topics[topic_quiz][current_qns_count].title;
+     // Append h1 element to parent class and display question title
+     document.getElementsByClassName('game_qns_title_main')[0].appendChild(qns_title);
+
+     // Save qns title to a global variable
+     current_qns_title = quiz_questions.topics[topic_quiz][current_qns_count].title;
+   }
 
    console.log("Finished populating question title");
  }
@@ -1191,9 +1204,52 @@ function scoreboard_nextbt_handler(){
     toggle_state('score_board_state', 'gameover_state');
 
     // Add event listener for buttons in gameover_state
-    // document.getElementById('gameover_replay_bt').addEventListener('click', replay_handler);
+    document.getElementById('gameover_replay_bt').addEventListener('click', replay_handler);
     // document.getElementById('gameover_reset_bt').addEventListener('click', reset_handler);
   }
+}
+
+// Function to handle replay button click event
+function replay_handler(){
+  // Reset current_qns_count to 0
+  current_qns_count = 0;
+
+  // Reset certain player1 and 2 object attributes
+  players.player1.current_pts = 0;
+  players.player1.total_pts = 0;
+  players.player1.answer_chosen = "";
+  players.player1.answer_correct = false;
+  players.player1.answering_now = false;
+  players.player1.correct_answers = 0;
+
+  players.player2.current_pts = 0;
+  players.player2.total_pts = 0;
+  players.player2.answer_chosen = "";
+  players.player2.answer_correct = false;
+  players.player2.answering_now = false;
+  players.player2.correct_answers = 0;
+
+  // Reset get_ready_qns_state progress loader bar width to 0%
+  document.getElementById('progress_bar').style.width = "0%";
+
+  // Populate content for display_game_details_state
+  document.getElementById('player1_name_display').innerHTML = "P1: " + players.player1.nickname;
+  document.getElementById('player2_name_display').innerHTML = "P2: " + players.player2.nickname;
+
+  // Increment replay counter by 1 to indicate how many times the game has been replayed
+  replay_counter += 1;
+
+  // Toggle state to display_game_details_state
+  toggle_state('gameover_state', 'display_game_details_state');
+
+  // Add event listener on startgame_bt id
+  var start_game_button = document.getElementById('startgame_bt');
+  start_game_button.addEventListener('click', populate_quiz_question);
+}
+
+// Function to hndle reset button click event
+function reset_handler(){
+
 }
 
 // Function to populate gameover_state
@@ -1287,20 +1343,26 @@ function populate_answering_content_for_player2(){
 // Function to populate content for answering_qns_state
 function populate_answering_content_for_player1(){
   if (current_qns_count === 0) {
-    // Create h5 element for current question title
-    var current_qns = document.createElement('h5');
-    current_qns.id = "answering_qns_title";
-    current_qns.innerHTML = current_qns_title;
+    if (replay_counter > 0) {
+      document.getElementById('answering_qns_title').innerHTML = current_qns_title;
+      document.getElementById('answering_player_turn').innerHTML = players.player1.nickname + "'s turn to answer...";
+    }
+    else {
+      // Create h5 element for current question title
+      var current_qns = document.createElement('h5');
+      current_qns.id = "answering_qns_title";
+      current_qns.innerHTML = current_qns_title;
 
-    // Append created h5 element to parent
-    document.getElementsByClassName('game_answering_header')[0].appendChild(current_qns);
+      // Append created h5 element to parent
+      document.getElementsByClassName('game_answering_header')[0].appendChild(current_qns);
 
-    // Create h5 element for whose turn is to answer current question
-    var currentQns_whose_turn = document.createElement('h5');
-    currentQns_whose_turn.id = "answering_player_turn";
-    // Player 1's turn to answer
-    currentQns_whose_turn.innerHTML = players.player1.nickname + "'s turn to answer...";
-    document.getElementsByClassName('game_player_turn')[0].appendChild(currentQns_whose_turn);
+      // Create h5 element for whose turn is to answer current question
+      var currentQns_whose_turn = document.createElement('h5');
+      currentQns_whose_turn.id = "answering_player_turn";
+      // Player 1's turn to answer
+      currentQns_whose_turn.innerHTML = players.player1.nickname + "'s turn to answer...";
+      document.getElementsByClassName('game_player_turn')[0].appendChild(currentQns_whose_turn);
+    }
   }
   else if (current_qns_count > 0) {
     // Update question title and whose turn it is to answer now
