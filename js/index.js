@@ -1,15 +1,19 @@
 
 
 // ----------------------------Global Variables---------------------------------
-var topic_quiz = "";        // Topic chosen for quiz by players
-var difficulty_level = "";  // Level of difficulty chosen by players
-var total_questions = 0;    // Number of total questions based on topic chosen
-var current_qns_count = 1;  // Qns number of current question
-var current_qns_title = ""; // Title of current question
-var progress = 0;           // initial value of your progress bar
-var timeout = 50;           // number of milliseconds between each frame
-var increment = .5;          // increment for each frame
-var maxprogress = 110;      // when to leave stop running the animation
+var topic_quiz = "";                          // Topic chosen for quiz by players
+var difficulty_level = "";                    // Level of difficulty chosen by players
+var total_questions = 0;                      // Number of total questions based on topic chosen
+var current_qns_count = 0;                    // Qns number of current question
+var current_qns_title = "";                   // Title of current question
+var rounds_of_answer = 0;
+var progress = 0;                             // initial value of your progress bar
+var timeout = 50;                             // number of milliseconds between each frame
+var increment = .5;                           // increment for each frame
+var maxprogress = 110;                        // when to leave stop running the animation
+var time_to_answer = 0;                       // Current time in secs to answer question
+var timer;
+
 
 // ------------------------------- Objects -------------------------------------
 // Questions object
@@ -24,122 +28,132 @@ var quiz_questions = {
       {
         "question_number": 1,
         "title":"What does css stands for?",
-        "image": "",
+        "image": "img/test_qns.png",
         "options": {
-          "option_1": "",
-          "option_2": "",
-          "option_3": "",
-          "option_4": "",
+          "option_1": "aaa",
+          "option_2": "bbb",
+          "option_3": "ccc",
+          "option_4": "ddd",
         },
-        "answer": ""
+        "answer": "option_1",
+        "rounds_of_answer": 0
       },
       {
         "question_number": 2,
-        "title":"",
-        "image": "",
+        "title":"What does css stands for?",
+        "image": "img/test_qns.png",
         "options": {
-          "option_1": "",
-          "option_2": "",
-          "option_3": "",
-          "option_4": "",
+          "option_1": "aaa",
+          "option_2": "bbb",
+          "option_3": "ccc",
+          "option_4": "ddd",
         },
-        "answer": ""
+        "answer": "option_1",
+        "rounds_of_answer": 0
       },
       {
         "question_number": 3,
-        "title":"",
-        "image": "",
+        "title":"What does css stands for?",
+        "image": "img/test_qns.png",
         "options": {
-          "option_1": "",
-          "option_2": "",
-          "option_3": "",
-          "option_4": "",
+          "option_1": "aaa",
+          "option_2": "bbb",
+          "option_3": "ccc",
+          "option_4": "ddd",
         },
-        "answer": ""
+        "answer": "option_1",
+        "rounds_of_answer": 0
       },
       {
         "question_number": 4,
-        "title":"",
-        "image": "",
+        "title":"What does css stands for?",
+        "image": "img/test_qns.png",
         "options": {
-          "option_1": "",
-          "option_2": "",
-          "option_3": "",
-          "option_4": "",
+          "option_1": "aaa",
+          "option_2": "bbb",
+          "option_3": "ccc",
+          "option_4": "ddd",
         },
-        "answer": ""
+        "answer": "option_1",
+        "rounds_of_answer": 0
       },
       {
         "question_number": 5,
-        "title":"",
-        "image": "",
+        "title":"What does css stands for?",
+        "image": "img/test_qns.png",
         "options": {
-          "option_1": "",
-          "option_2": "",
-          "option_3": "",
-          "option_4": "",
+          "option_1": "aaa",
+          "option_2": "bbb",
+          "option_3": "ccc",
+          "option_4": "ddd",
         },
-        "answer": ""
+        "answer": "option_1",
+        "rounds_of_answer": 0
       },
       {
         "question_number": 6,
-        "title":"",
-        "image": "",
+        "title":"What does css stands for?",
+        "image": "img/test_qns.png",
         "options": {
-          "option_1": "",
-          "option_2": "",
-          "option_3": "",
-          "option_4": "",
+          "option_1": "aaa",
+          "option_2": "bbb",
+          "option_3": "ccc",
+          "option_4": "ddd",
         },
-        "answer": ""
+        "answer": "option_1",
+        "rounds_of_answer": 0
       },
       {
         "question_number": 7,
-        "title":"",
-        "image": "",
+        "title":"What does css stands for?",
+        "image": "img/test_qns.png",
         "options": {
-          "option_1": "",
-          "option_2": "",
-          "option_3": "",
-          "option_4": "",
+          "option_1": "aaa",
+          "option_2": "bbb",
+          "option_3": "ccc",
+          "option_4": "ddd",
         },
-        "answer": ""
+        "answer": "option_1",
+        "rounds_of_answer": 0
       },
       {
         "question_number": 8,
-        "title":"",
-        "image": "",
+        "title":"What does css stands for?",
+        "image": "img/test_qns.png",
         "options": {
-          "option_1": "",
-          "option_2": "",
-          "option_3": "",
-          "option_4": "",
+          "option_1": "aaa",
+          "option_2": "bbb",
+          "option_3": "ccc",
+          "option_4": "ddd",
         },
-        "answer": ""
+        "answer": "option_1",
+        "rounds_of_answer": 0
       },
       {
         "question_number": 9,
-        "title":"",
-        "image": "",
+        "title":"What does css stands for?",
+        "image": "img/test_qns.png",
         "options": {
-          "option_1": "",
-          "option_2": "",
-          "option_3": "",
-          "option_4": "",
+          "option_1": "aaa",
+          "option_2": "bbb",
+          "option_3": "ccc",
+          "option_4": "ddd",
         },
-        "answer": ""
+        "answer": "option_1",
+        "rounds_of_answer": 0
       },
       {
         "question_number": 10,
-        "title":"",
-        "image": "",
+        "title":"What does css stands for?",
+        "image": "img/test_qns.png",
         "options": {
-          "option_1": "",
-          "option_2": "",
-          "option_3": "",
-          "option_4": "",
+          "option_1": "aaa",
+          "option_2": "bbb",
+          "option_3": "ccc",
+          "option_4": "ddd",
         },
-        "answer": ""
+        "answer": "option_1",
+        "rounds_of_answer": 0
       },
     ],
     "html": [
@@ -153,7 +167,8 @@ var quiz_questions = {
           "option_3": "",
           "option_4": "",
         },
-        "answer": ""
+        "answer": "",
+        "rounds_of_answer": 0
       },
       {
         "question_number": 2,
@@ -165,7 +180,8 @@ var quiz_questions = {
           "option_3": "",
           "option_4": "",
         },
-        "answer": ""
+        "answer": "",
+        "rounds_of_answer": 0
       },
       {
         "question_number": 3,
@@ -177,7 +193,8 @@ var quiz_questions = {
           "option_3": "",
           "option_4": "",
         },
-        "answer": ""
+        "answer": "",
+        "rounds_of_answer": 0
       },
       {
         "question_number": 4,
@@ -189,7 +206,8 @@ var quiz_questions = {
           "option_3": "",
           "option_4": "",
         },
-        "answer": ""
+        "answer": "",
+        "rounds_of_answer": 0
       },
       {
         "question_number": 5,
@@ -201,7 +219,8 @@ var quiz_questions = {
           "option_3": "",
           "option_4": "",
         },
-        "answer": ""
+        "answer": "",
+        "rounds_of_answer": 0
       },
       {
         "question_number": 6,
@@ -213,7 +232,8 @@ var quiz_questions = {
           "option_3": "",
           "option_4": "",
         },
-        "answer": ""
+        "answer": "",
+        "rounds_of_answer": 0
       },
       {
         "question_number": 7,
@@ -225,7 +245,8 @@ var quiz_questions = {
           "option_3": "",
           "option_4": "",
         },
-        "answer": ""
+        "answer": "",
+        "rounds_of_answer": 0
       },
       {
         "question_number": 8,
@@ -237,7 +258,8 @@ var quiz_questions = {
           "option_3": "",
           "option_4": "",
         },
-        "answer": ""
+        "answer": "",
+        "rounds_of_answer": 0
       },
       {
         "question_number": 9,
@@ -249,7 +271,8 @@ var quiz_questions = {
           "option_3": "",
           "option_4": "",
         },
-        "answer": ""
+        "answer": "",
+        "rounds_of_answer": 0
       },
       {
         "question_number": 10,
@@ -261,7 +284,8 @@ var quiz_questions = {
           "option_3": "",
           "option_4": "",
         },
-        "answer": ""
+        "answer": "",
+        "rounds_of_answer": 0
       },
     ],
     "JavaScript": [
@@ -275,7 +299,8 @@ var quiz_questions = {
           "option_3": "",
           "option_4": "",
         },
-        "answer": ""
+        "answer": "",
+        "rounds_of_answer": 0
       },
       {
         "question_number": 2,
@@ -287,7 +312,8 @@ var quiz_questions = {
           "option_3": "",
           "option_4": "",
         },
-        "answer": ""
+        "answer": "",
+        "rounds_of_answer": 0
       },
       {
         "question_number": 3,
@@ -299,7 +325,8 @@ var quiz_questions = {
           "option_3": "",
           "option_4": "",
         },
-        "answer": ""
+        "answer": "",
+        "rounds_of_answer": 0
       },
       {
         "question_number": 4,
@@ -311,7 +338,8 @@ var quiz_questions = {
           "option_3": "",
           "option_4": "",
         },
-        "answer": ""
+        "answer": "",
+        "rounds_of_answer": 0
       },
       {
         "question_number": 5,
@@ -323,7 +351,8 @@ var quiz_questions = {
           "option_3": "",
           "option_4": "",
         },
-        "answer": ""
+        "answer": "",
+        "rounds_of_answer": 0
       },
       {
         "question_number": 6,
@@ -335,7 +364,8 @@ var quiz_questions = {
           "option_3": "",
           "option_4": "",
         },
-        "answer": ""
+        "answer": "",
+        "rounds_of_answer": 0
       },
       {
         "question_number": 7,
@@ -347,7 +377,8 @@ var quiz_questions = {
           "option_3": "",
           "option_4": "",
         },
-        "answer": ""
+        "answer": "",
+        "rounds_of_answer": 0
       },
       {
         "question_number": 8,
@@ -359,7 +390,8 @@ var quiz_questions = {
           "option_3": "",
           "option_4": "",
         },
-        "answer": ""
+        "answer": "",
+        "rounds_of_answer": 0
       },
       {
         "question_number": 9,
@@ -371,7 +403,8 @@ var quiz_questions = {
           "option_3": "",
           "option_4": "",
         },
-        "answer": ""
+        "answer": "",
+        "rounds_of_answer": 0
       },
       {
         "question_number": 10,
@@ -383,7 +416,8 @@ var quiz_questions = {
           "option_3": "",
           "option_4": "",
         },
-        "answer": ""
+        "answer": "",
+        "rounds_of_answer": 0
       },
     ]
   }
@@ -396,14 +430,16 @@ var quiz_questions = {
      "current_pts": 0,
      "total_pts": 0,
      "answer_chosen": "",
-     "answer_correct": false
+     "answer_correct": false,
+     "answering_now": false
    },
    "player2": {
      "nickname": "",
      "current_pts": 0,
      "total_pts": 0,
      "answer_chosen": "",
-     "answer_correct": false
+     "answer_correct": false,
+     "answering_now": false
    }
  }
 
@@ -477,7 +513,7 @@ var quiz_questions = {
    // Create h1 element, assign id and populate innerHTML
    var qns_of_qns = document.createElement('h1');
    qns_of_qns.id = "getready_qnsofqns";
-   qns_of_qns.innerHTML = "Question " + current_qns_count + " of " + total_questions;
+   qns_of_qns.innerHTML = "Question " + (current_qns_count+1) + " of " + total_questions;
 
    // Append h1 element to parent class
    // Display question number out of total questions
@@ -492,7 +528,7 @@ var quiz_questions = {
    // Create h1 element, assign id and populate innerHTML
    var qns_title = document.createElement('h1');
    qns_title.id = "getready_qns_title";
-   qns_title.innerHTML = quiz_questions.topics[topic_quiz][current_qns_count-1].title;
+   qns_title.innerHTML = quiz_questions.topics[topic_quiz][current_qns_count].title;
 
    // Append h1 element to parent class and display question title
    document.getElementsByClassName('game_qns_title_main')[0].appendChild(qns_title);
@@ -504,7 +540,7 @@ var quiz_questions = {
  }
 
  // Function to start the timer for get_ready_qns_state
- function start_timer(){
+ function start_get_ready_state_timer(){
    console.log("Start progress bar animation");
 
    // Animate the progress bar loading
@@ -513,43 +549,755 @@ var quiz_questions = {
         if(progress < maxprogress) {
           progress_percentage = progress.toString();
           progress_percentage = progress + "%";
-          console.log("Progress = " + progress_percentage);
           document.getElementById('progress_bar').style.width = progress_percentage;
-          start_timer();
+          start_get_ready_state_timer();
         }
         else {
+          console.log("Finished progress bar animation");
+
+          // Update whose turn is it to answer now, swticth to player 1
+          decide_whose_turn_to_answer();
+
+          // Populate content for answering_qns_state for player1
+          populate_answering_content_for_player1();
+
           // Display answering_qns_state
           toggle_state('get_ready_qns_state', 'answering_qns_state');
+
+          // Start timer countdown for answering_qns_state
+          start_answering_timer();
         }
     }, timeout);
-
-    console.log("Finished progress bar animation");
  }
 
- // Function to get the quiz running
- function start_quiz(){
-   // Populate qns number out of total questions
-   populate_question_of_total_question();
+ // Function to start the timer countdown for answering_qns_state as well as
+ // Handle events for skip button and option chosen by player
+ function start_answering_timer(){
+   // Code to animate the countdown timer
+   // time_to_answer = quiz_questions.difficulty_level[difficulty_level];
+   time_to_answer = 10; // For testing purposes, use 10 secs timer
+   console.log("Current time to answer question = " + time_to_answer);
 
-   // Populate title of question
-   populate_question_title();
+   timer = setInterval(function() {
+   document.getElementById('answering_timer').innerHTML = time_to_answer;
+   console.log("Time left to answer: " + time_to_answer);
+   time_to_answer--;
 
-   // Display get_ready_qns_state
-   toggle_state('display_game_details_state', 'get_ready_qns_state');
+   // Code to handle skip button event
+   document.getElementById('answering_skipbt').addEventListener('click', skip_button_handler);
 
-   // Initiate the progress bar
-   progress = 0;
-   start_timer();
+   // Code to handle option chosen event
+   document.getElementById('answering_option1').addEventListener('click', option1_handler);
+   document.getElementById('answering_option2').addEventListener('click', option2_handler);
+   document.getElementById('answering_option3').addEventListener('click', option3_handler);
+   document.getElementById('answering_option4').addEventListener('click', option4_handler);
+   if(time_to_answer == -1) {
+     // Timer has reached 0, clear the timeout
+     clearInterval(timer);
 
-   // Loop the number of questions in each topic
-   // while (current_qns_count <= total_questions) {
-   //
-   // }
- }
+     // Player 1 currently still answering but timer has reached 0
+     // Save player1 object attributes with the necessary data
+     // Refresh content for player 2
+     if (players.player1.answering_now === true && players.player2.answering_now === false) {
+       // Update Player 1 answer_correct
+       players.player1.answer_correct = false;
 
+       // Update player1 current points for the question
+       players.player1.current_pts = 0;
 
+       // Update player 1 total points
+       players.player1.total_pts += players.player1.current_pts;
 
- // -----------------------------Main Game--------------------------------------
+       // Update whose turn is it to answer now, switch to player 2 turn to answer
+       decide_whose_turn_to_answer();
+
+       // Refresh content for answering_qns_state
+       populate_answering_content_for_player2();
+
+       // Refresh answering_qns_state timer for player 2
+       start_answering_timer();
+     }
+     // Player 2 currently still answering but timer has reached 0
+     // Save player2 object attributes with the necessary data
+     // Toggle state to result_qns_state and increment current_qns_count by 1
+     else if (players.player1.answering_now === false && players.player2.answering_now === true) {
+       // Update Player 2 answer_correct
+       players.player2.answer_correct = false;
+
+       // No answer chosen, update player2 current points for the question to 0
+       players.player2.current_pts = 0;
+
+       // Update player 2 total points
+       players.player2.total_pts += players.player2.current_pts;
+
+       // Populate content for results page
+       populate_results();
+
+       // Toggle state to result_qns_state
+       toggle_state('answering_qns_state', 'result_qns_state');
+      }
+    }
+ }, 1000);
+}
+
+ // Function to handle option1 click event
+function option1_handler(){
+  clearInterval(timer);
+  if (players.player1.answering_now === true && players.player2.answering_now === false) {
+    // Update player1 answer_chosen object attribute
+    players.player1.answer_chosen = "option_1";
+    console.log("Player 1 has chosen option 1");
+
+    // Update Player 1 answer_correct variable depending what player 1 has chosen
+    if (quiz_questions.topics[topic_quiz][current_qns_count].answer === "option_1") {
+      players.player1.answer_correct = true;
+      console.log("Player 1 has selected the correct answer");
+
+      // Update player1 current points for the question
+      players.player1.current_pts = 50;
+      console.log("Player 1 current points for this question = " + players.player1.current_pts);
+
+      // Update player 1 total points
+      players.player1.total_pts += players.player1.current_pts;
+      console.log("Player 1 total points = " + players.player1.total_pts);
+    }
+    else {
+      players.player1.answer_correct = false;
+      console.log("Player 1 has chosen the incorrect answer");
+
+      // Update player1 current points for the question
+      players.player1.current_pts = 0;
+      console.log("Player 1 current points for this question = " + players.player1.current_pts);
+
+      // Update player 1 total points
+      players.player1.total_pts += players.player1.current_pts;
+      console.log("Player 1 total points = " + players.player1.total_pts);
+    }
+
+    // Update whose turn is it to answer now
+    decide_whose_turn_to_answer();
+    console.log("Switched to player 2 turn to answer");
+
+    // Refresh content for answering_qns_state
+    populate_answering_content_for_player2();
+    console.log("Populated content for player 2 turn's to answer");
+
+    // Refresh answering_qns_state timer for player 2
+    start_answering_timer();
+  }
+  else if (players.player1.answering_now === false && players.player2.answering_now === true) {
+    // Update player2 answer_chosen object attribute
+    players.player2.answer_chosen = "option_1";
+    console.log("Player 2 has chosen option 1");
+
+    // Update Player 2 answer_correct variable depending what player 2 has chosen
+    if (quiz_questions.topics[topic_quiz][current_qns_count].answer === "option_1") {
+      players.player2.answer_correct = true;
+      console.log("Player 2 has chosen the correct answer");
+
+      // Update player2 current points for the question
+      players.player2.current_pts = 50;
+      console.log("Player 2 current points for this question = " + players.player2.current_pts);
+
+      // Update player 2 total points
+      players.player2.total_pts += players.player2.current_pts;
+      console.log("Player 2 total points = " + players.player2.total_pts);
+    }
+    else {
+      players.player2.answer_correct = false;
+      console.log("Player 2 has chosen the incorrect answer");
+
+      // Update player2 current points for the question
+      players.player2.current_pts = 0;
+      console.log("Player 2 current points for this question = " + players.player2.current_pts);
+
+      // Update player 2 total points
+      players.player2.total_pts += players.player2.current_pts;
+      console.log("Player 2 total points = " + players.player2.total_pts);
+    }
+
+    // Populate content for results page
+    populate_results();
+    console.log("Populated results for results page");
+
+    // Toggle state to result_qns_state
+    toggle_state('answering_qns_state', 'result_qns_state');
+  }
+}
+
+ // Function to handle option2 click event
+function option2_handler(){
+  clearInterval(timer);
+  if (players.player1.answering_now === true && players.player2.answering_now === false) {
+    // Update player1 answer_chosen object attribute
+    players.player1.answer_chosen = "option_2";
+    console.log("Player 1 has chosen option 2");
+
+    // Update Player 1 answer_correct variable depending what player 1 has chosen
+    if (quiz_questions.topics[topic_quiz][current_qns_count].answer === "option_2") {
+      players.player1.answer_correct = true;
+      console.log("Player 1 has selected the correct answer");
+
+      // Update player1 current points for the question
+      players.player1.current_pts = 50;
+      console.log("Player 1 current points for this question = " + players.player1.current_pts);
+
+      // Update player 1 total points
+      players.player1.total_pts += players.player1.current_pts;
+      console.log("Player 1 total points = " + players.player1.total_pts);
+    }
+    else {
+      players.player1.answer_correct = false;
+      console.log("Player 1 has chosen the incorrect answer");
+
+      // Update player1 current points for the question
+      players.player1.current_pts = 0;
+      console.log("Player 1 current points for this question = " + players.player1.current_pts);
+
+      // Update player 1 total points
+      players.player1.total_pts += players.player1.current_pts;
+      console.log("Player 1 total points = " + players.player1.total_pts);
+    }
+
+    // Update whose turn is it to answer now
+    decide_whose_turn_to_answer();
+    console.log("Switched to player 2 turn to answer");
+
+    // Refresh content for answering_qns_state
+    populate_answering_content_for_player2();
+    console.log("Populated content for player 2 turn's to answer");
+
+    // Refresh answering_qns_state timer for player 2
+    start_answering_timer();
+  }
+  else if (players.player1.answering_now === false && players.player2.answering_now === true) {
+    // Update player2 answer_chosen object attribute
+    players.player2.answer_chosen = "option_2";
+    console.log("Player 2 has chosen option 2");
+
+    // Update Player 2 answer_correct variable depending what player 2 has chosen
+    if (quiz_questions.topics[topic_quiz][current_qns_count].answer === "option_2") {
+      players.player2.answer_correct = true;
+      console.log("Player 2 has chosen the correct answer");
+
+      // Update player2 current points for the question
+      players.player2.current_pts = 50;
+      console.log("Player 2 current points for this question = " + players.player2.current_pts);
+
+      // Update player 2 total points
+      players.player2.total_pts += players.player2.current_pts;
+      console.log("Player 2 total points = " + players.player2.total_pts);
+    }
+    else {
+      players.player2.answer_correct = false;
+      console.log("Player 2 has chosen the incorrect answer");
+
+      // Update player2 current points for the question
+      players.player2.current_pts = 0;
+      console.log("Player 2 current points for this question = " + players.player2.current_pts);
+
+      // Update player 2 total points
+      players.player2.total_pts += players.player2.current_pts;
+      console.log("Player 2 total points = " + players.player2.total_pts);
+    }
+
+    // Populate content for results page
+    populate_results();
+    console.log("Populated results for results page");
+
+    // Toggle state to result_qns_state
+    toggle_state('answering_qns_state', 'result_qns_state');
+  }
+}
+
+ // Function to handle option3 click event
+function option3_handler(){
+  clearInterval(timer);
+  if (players.player1.answering_now === true && players.player2.answering_now === false) {
+    // Update player1 answer_chosen object attribute
+    players.player1.answer_chosen = "option_3";
+    console.log("Player 1 has chosen option 3");
+
+    // Update Player 1 answer_correct variable depending what player 1 has chosen
+    if (quiz_questions.topics[topic_quiz][current_qns_count].answer === "option_3") {
+      players.player1.answer_correct = true;
+      console.log("Player 1 has selected the correct answer");
+
+      // Update player1 current points for the question
+      players.player1.current_pts = 50;
+      console.log("Player 1 current points for this question = " + players.player1.current_pts);
+
+      // Update player 1 total points
+      players.player1.total_pts += players.player1.current_pts;
+      console.log("Player 1 total points = " + players.player1.total_pts);
+    }
+    else {
+      players.player1.answer_correct = false;
+      console.log("Player 1 has chosen the incorrect answer");
+
+      // Update player1 current points for the question
+      players.player1.current_pts = 0;
+      console.log("Player 1 current points for this question = " + players.player1.current_pts);
+
+      // Update player 1 total points
+      players.player1.total_pts += players.player1.current_pts;
+      console.log("Player 1 total points = " + players.player1.total_pts);
+    }
+
+    // Update whose turn is it to answer now
+    decide_whose_turn_to_answer();
+    console.log("Switched to player 2 turn to answer");
+
+    // Refresh content for answering_qns_state
+    populate_answering_content_for_player2();
+    console.log("Populated content for player 2 turn's to answer");
+
+    // Refresh answering_qns_state timer for player 2
+    start_answering_timer();
+  }
+  else if (players.player1.answering_now === false && players.player2.answering_now === true) {
+    // Update player2 answer_chosen object attribute
+    players.player2.answer_chosen = "option_3";
+    console.log("Player 2 has chosen option 3");
+
+    // Update Player 2 answer_correct variable depending what player 2 has chosen
+    if (quiz_questions.topics[topic_quiz][current_qns_count].answer === "option_3") {
+      players.player2.answer_correct = true;
+      console.log("Player 2 has chosen the correct answer");
+
+      // Update player2 current points for the question
+      players.player2.current_pts = 50;
+      console.log("Player 2 current points for this question = " + players.player2.current_pts);
+
+      // Update player 2 total points
+      players.player2.total_pts += players.player2.current_pts;
+      console.log("Player 2 total points = " + players.player2.total_pts);
+    }
+    else {
+      players.player2.answer_correct = false;
+      console.log("Player 2 has chosen the incorrect answer");
+
+      // Update player2 current points for the question
+      players.player2.current_pts = 0;
+      console.log("Player 2 current points for this question = " + players.player2.current_pts);
+
+      // Update player 2 total points
+      players.player2.total_pts += players.player2.current_pts;
+      console.log("Player 2 total points = " + players.player2.total_pts);
+    }
+
+    // Populate content for results page
+    populate_results();
+    console.log("Populated results for results page");
+
+    // Toggle state to result_qns_state
+    toggle_state('answering_qns_state', 'result_qns_state');
+  }
+}
+
+ // Function to handle option4 click event
+function option4_handler(){
+  clearInterval(timer);
+  if (players.player1.answering_now === true && players.player2.answering_now === false) {
+    // Update player1 answer_chosen object attribute
+    players.player1.answer_chosen = "option_4";
+    console.log("Player 1 has chosen option 4");
+
+    // Update Player 1 answer_correct variable depending what player 1 has chosen
+    if (quiz_questions.topics[topic_quiz][current_qns_count].answer === "option_4") {
+      players.player1.answer_correct = true;
+      console.log("Player 1 has selected the correct answer");
+
+      // Update player1 current points for the question
+      players.player1.current_pts = 50;
+      console.log("Player 1 current points for this question = " + players.player1.current_pts);
+
+      // Update player 1 total points
+      players.player1.total_pts += players.player1.current_pts;
+      console.log("Player 1 total points = " + players.player1.total_pts);
+    }
+    else {
+      players.player1.answer_correct = false;
+      console.log("Player 1 has chosen the incorrect answer");
+
+      // Update player1 current points for the question
+      players.player1.current_pts = 0;
+      console.log("Player 1 current points for this question = " + players.player1.current_pts);
+
+      // Update player 1 total points
+      players.player1.total_pts += players.player1.current_pts;
+      console.log("Player 1 total points = " + players.player1.total_pts);
+    }
+
+    // Update whose turn is it to answer now
+    decide_whose_turn_to_answer();
+    console.log("Switched to player 2 turn to answer");
+
+    // Refresh content for answering_qns_state
+    populate_answering_content_for_player2();
+    console.log("Populated content for player 2 turn's to answer");
+
+    // Refresh answering_qns_state timer for player 2
+    start_answering_timer();
+  }
+  else if (players.player1.answering_now === false && players.player2.answering_now === true) {
+    // Update player2 answer_chosen object attribute
+    players.player2.answer_chosen = "option_4";
+    console.log("Player 2 has chosen option 4");
+
+    // Update Player 2 answer_correct variable depending what player 2 has chosen
+    if (quiz_questions.topics[topic_quiz][current_qns_count].answer === "option_4") {
+      players.player2.answer_correct = true;
+      console.log("Player 2 has chosen the correct answer");
+
+      // Update player2 current points for the question
+      players.player2.current_pts = 50;
+      console.log("Player 2 current points for this question = " + players.player2.current_pts);
+
+      // Update player 2 total points
+      players.player2.total_pts += players.player2.current_pts;
+      console.log("Player 2 total points = " + players.player2.total_pts);
+    }
+    else {
+      players.player2.answer_correct = false;
+      console.log("Player 2 has chosen the incorrect answer");
+
+      // Update player2 current points for the question
+      players.player2.current_pts = 0;
+      console.log("Player 2 current points for this question = " + players.player2.current_pts);
+
+      // Update player 2 total points
+      players.player2.total_pts += players.player2.current_pts;
+      console.log("Player 2 total points = " + players.player2.total_pts);
+    }
+
+    // Populate content for results page
+    populate_results();
+    console.log("Populated results for results page");
+
+    // Toggle state to result_qns_state
+    toggle_state('answering_qns_state', 'result_qns_state');
+  }
+}
+
+// Function to handle skip button click event during answering_qns_state
+function skip_button_handler(){
+  clearInterval(timer);
+  // Player 1 click skip button, edit player 1 object attributes and refresh content for player 2
+  if (players.player1.answering_now === true && players.player2.answering_now === false) {
+    // Update player 1 answer_correct variable
+    players.player1.answer_correct = false;
+
+    // Update player 1 points for current question and total points
+    players.player1.current_pts = 0;
+    players.player1.total_pts += players.player1.current_pts;
+
+    // Update whose turn is it to answer now
+    decide_whose_turn_to_answer();
+    console.log("Switched to player 2 turn to answer");
+
+    // Refresh content for answering_qns_state
+    populate_answering_content_for_player2();
+    console.log("Populated content for player 2 turn's to answer");
+
+    // Refresh answering_qns_state timer for player 2
+    start_answering_timer();
+  }
+  // Player 2 click skip button, populate content for result_qns_state
+  else if (players.player1.answering_now === false && players.player2.answering_now === true) {
+    // Update player 2 answer_correct variable
+    players.player2.answer_correct = false;
+
+    // Update player 2 points for current question and total points
+    players.player2.current_pts = 0;
+    players.player2.total_pts += players.player2.current_pts;
+
+    // Populate content for results page
+    populate_results();
+    console.log("Populated results for results page");
+
+    // Toggle state to result_qns_state
+    toggle_state('answering_qns_state', 'result_qns_state');
+  }
+}
+
+// Function to populate result_qns_state
+function populate_results(){
+  // Display current question title
+  document.getElementById('result_qns_title').innerHTML = current_qns_title;
+
+  // Display outcome of answer chosen by player 1
+  if (players.player1.answer_correct === false) {
+    // Player 1 answer is incorrect
+    document.getElementById('result_answer_p1_outcome').innerHTML = "INCORRECT";
+    // Display the reveal button so that player 1 can reveal the correct answer explanation
+    document.getElementById('result_p1_reveal').style.display = "inline";
+  }
+  else if (players.player1.answer_correct === true) {
+    // Player 1 answer is correct
+    document.getElementById('result_answer_p1_outcome').innerHTML = "CORRECT";
+  }
+
+  // Display placing for player 1
+  if (players.player1.total_pts < players.player2.total_pts) {
+    console.log("P1 total points = " + players.player1.total_pts);
+    console.log("P2 total points = " + players.player2.total_pts);
+    document.getElementById('result_player1_placing').innerHTML = "2ND PLACE";
+    var player1_point_behind = players.player2.total_pts - players.player1.total_pts;
+    document.getElementById('result_player1_pts_ahead_behind').innerHTML = player1_point_behind + " PTS BEHIND";
+  }
+  else if (players.player1.total_pts > players.player2.total_pts) {
+    console.log("P1 total points = " + players.player1.total_pts);
+    console.log("P2 total points = " + players.player2.total_pts);
+    document.getElementById('result_player1_placing').innerHTML = "1ST PLACE";
+    var player1_point_ahead = players.player1.total_pts - players.player2.total_pts;
+    document.getElementById('result_player1_pts_ahead_behind').innerHTML = player1_point_ahead + " PTS AHEAD";
+  }
+  else if (players.player1.total_pts === 0) {
+    console.log("P1 total points = " + players.player1.total_pts);
+    console.log("P2 total points = " + players.player2.total_pts);
+    document.getElementById('result_player1_placing').innerHTML = "0TH PLACE";
+    document.getElementById('result_player1_pts_ahead_behind').innerHTML = "0 PTS DIFF";
+  }
+
+  // Display current points attained by player 1 for the current question
+  document.getElementById('result_player1_pts').innerHTML = players.player1.current_pts + " pts";
+  players.player1.current_pts = 0;
+
+  // Display outcome of answer chosen by player 2
+  if (players.player2.answer_correct === false) {
+    // Player 2 answer is incorrect
+    document.getElementById('result_answer_p2_outcome').innerHTML = "INCORRECT";
+    // Display the reveal button so that player 1 can reveal the correct answer explanation
+    document.getElementById('result_p2_reveal').style.display = "inline";
+  }
+  else if (players.player2.answer_correct === true) {
+    // Player 1 answer is correct
+    document.getElementById('result_answer_p2_outcome').innerHTML = "CORRECT";
+  }
+
+  // Display placing for player 2
+  if (players.player2.total_pts < players.player1.total_pts) {
+    console.log("P1 total points = " + players.player1.total_pts);
+    console.log("P2 total points = " + players.player2.total_pts);
+    document.getElementById('result_player2_placing').innerHTML = "2ND PLACE";
+    var player2_point_behind = players.player1.total_pts - players.player2.total_pts;
+    document.getElementById('result_player2_pts_ahead_behind').innerHTML = player2_point_behind + " PTS BEHIND";
+  }
+  else if (players.player2.total_pts > players.player1.total_pts) {
+    console.log("P1 total points = " + players.player1.total_pts);
+    console.log("P2 total points = " + players.player2.total_pts);
+    document.getElementById('result_player2_placing').innerHTML = "1ST PLACE";
+    var player2_point_ahead = players.player2.total_pts - players.player1.total_pts;
+    document.getElementById('result_player2_pts_ahead_behind').innerHTML = player2_point_ahead + " PTS AHEAD";
+  }
+  else if (players.player2.total_pts === 0) {
+    console.log("P1 total points = " + players.player1.total_pts);
+    console.log("P2 total points = " + players.player2.total_pts);
+    document.getElementById('result_player2_placing').innerHTML = "0TH PLACE";
+    document.getElementById('result_player2_pts_ahead_behind').innerHTML = "0 PTS DIFF";
+  }
+
+  // Display current points attained by player 2 for the current question
+  document.getElementById('result_player2_pts').innerHTML = players.player2.current_pts + " pts";
+  players.player2.current_pts = 0;
+}
+
+// Function to get the quiz running
+function populate_quiz_question(){
+ // Populate qns number out of total questions, e.g. Q 1 of 10
+ populate_question_of_total_question();
+
+ // Populate title of question
+ populate_question_title();
+
+ // Start the loop through the quiz questions
+ console.log("Current question count = " + current_qns_count);
+ loop_through_quiz_questions();
+}
+
+// Function to start the loop through all the questions in the topic chosen
+function loop_through_quiz_questions(){
+   console.log("Looping questions in progress..., round " + current_qns_count);
+
+   // First question encountered
+   if (current_qns_count === 0) {
+     // Display get_ready_qns_state from display_game_details_state
+     toggle_state('display_game_details_state', 'get_ready_qns_state');
+
+     // Initiate the progress bar for get ready state
+     progress = 0;
+     start_get_ready_state_timer();
+   }
+   else if (current_qns_count > 0) {
+     // Initiate the progress bar for get ready state
+     progress = 0;
+     start_get_ready_state_timer();
+   }
+
+   // Add event listener to next button in result_qns_state to populate content and toggle the display
+   document.getElementById('result_qns_nextbt').addEventListener('click', results_nextbt_handler);
+
+   // Add event listener to the next button in score_board_state
+   document.getElementById('scoreboard_nextbt').addEventListener('click', scoreboard_nextbt_handler);
+}
+
+// Function to handle click event for next button in score_board_state
+// Decide which state should it go to depending on the current_qns_count
+function scoreboard_nextbt_handler(){
+  console.log("Handling scoreboard next button...");
+
+  // Still have questions remaining in the topic, go back to get_ready_qns_state
+  if (current_qns_count <= 8) {
+    // Increment current_qns_count by 1
+    current_qns_count += 1;
+    console.log("Question " + current_qns_count + " will be displayed in the next round");
+
+    // Populate content for get_ready_qns_state
+    document.getElementById('getready_qnsofqns').innerHTML = "Question " + (current_qns_count+1) + " of " + total_questions;
+    document.getElementById('getready_qns_title').innerHTML = quiz_questions.topics[topic_quiz][current_qns_count].title;
+
+    // Toggle state to get_ready_qns_state
+    toggle_state('score_board_state', 'get_ready_qns_state');
+
+    // Reset the width of progress loader bar to 0%, before moving on to get_ready_qns_state
+    document.getElementById('progress_bar').style.width = "0%";
+
+    // Set the display of the reveal button in result_qns_state to none
+    document.getElementById('result_p1_reveal').style.display = "none";
+    document.getElementById('result_p2_reveal').style.display = "none";
+
+    // Continue looping through the questions in the topic
+    loop_through_quiz_questions();
+  }
+  // Last question encountered, go to gameover_state
+  else if (current_qns_count === 9) {
+    // Populate content for gameover_state
+    populate_gameover();
+
+    // Toggle state to gameover_state
+    toggle_state('score_board_state', 'gameover_state');
+
+    // Add event listener for buttons in gameover_state
+  }
+}
+
+// Function to handle click event for next button in result_qns_state - populate content for scoreboard
+function results_nextbt_handler(){
+  console.log("Populating scoreboard content...");
+  // Populate scoreboard content for player 1
+  document.getElementById('scoreboard_p1_name').innerHTML = players.player1.nickname;
+  document.getElementById('scoreboard_p1_points').innerHTML = players.player1.total_pts;
+
+  // Populate scoreboard content for player 2
+  document.getElementById('scoreboard_p2_name').innerHTML = players.player2.nickname;
+  document.getElementById('scoreboard_p2_points').innerHTML = players.player2.total_pts;
+  console.log("Finished populating scoreboard content...");
+
+  // Toggle state to score_board_state
+  toggle_state('result_qns_state', 'score_board_state');
+}
+
+// Function to decide whose turn is it to answer now - player 1 always goes first
+function decide_whose_turn_to_answer(){
+  // Player 1's turn to answer
+  if (rounds_of_answer === 0) {
+    console.log("Rounds of answer for current question = " + rounds_of_answer);
+    rounds_of_answer += 1;
+    players.player1.answering_now = true;
+    players.player2.answering_now = false;
+  }
+  // Player 2's turn to answer
+  else if (rounds_of_answer === 1) {
+    console.log("Rounds of answer for current question = " + rounds_of_answer);
+    rounds_of_answer += 1;
+    players.player1.answering_now = false;
+    players.player2.answering_now = true;
+    rounds_of_answer = 0;
+  }
+}
+
+// Function to refresh content for answering_qns_state
+function populate_answering_content_for_player2(){
+  // Display its player 2's turn to answer
+  document.getElementById('answering_player_turn').innerHTML = players.player2.nickname + "'s turn to answer...";
+
+  // Populate image for current question
+  var current_qns_image = quiz_questions.topics[topic_quiz][current_qns_count].image;
+  // Assign the image src attribute based on it's id
+  document.getElementById('answering_qns_img').src = current_qns_image;
+
+  // Populate the 4 options for current question
+  var option1 = quiz_questions.topics[topic_quiz][current_qns_count].options.option_1;
+  var option2 = quiz_questions.topics[topic_quiz][current_qns_count].options.option_2;
+  var option3 = quiz_questions.topics[topic_quiz][current_qns_count].options.option_3;
+  var option4 = quiz_questions.topics[topic_quiz][current_qns_count].options.option_4;
+  // Assign the innerHTML of the 4 options based on it's id
+  document.getElementById('answering_option1').innerHTML = option1;
+  document.getElementById('answering_option2').innerHTML = option2;
+  document.getElementById('answering_option3').innerHTML = option3;
+  document.getElementById('answering_option4').innerHTML = option4;
+}
+
+// Function to populate content for answering_qns_state
+function populate_answering_content_for_player1(){
+  if (current_qns_count === 0) {
+    // Create h5 element for current question title
+    var current_qns = document.createElement('h5');
+    current_qns.id = "answering_qns_title";
+    current_qns.innerHTML = current_qns_title;
+
+    // Append created h5 element to parent
+    document.getElementsByClassName('game_answering_header')[0].appendChild(current_qns);
+
+    // Create h5 element for whose turn is to answer current question
+    var currentQns_whose_turn = document.createElement('h5');
+    currentQns_whose_turn.id = "answering_player_turn";
+    // Player 1's turn to answer
+    currentQns_whose_turn.innerHTML = players.player1.nickname + "'s turn to answer...";
+    document.getElementsByClassName('game_player_turn')[0].appendChild(currentQns_whose_turn);
+  }
+  else if (current_qns_count > 0) {
+    // Update question title and whose turn it is to answer now
+    document.getElementById('answering_qns_title').innerHTML = quiz_questions.topics[topic_quiz][current_qns_count].title;
+    document.getElementById('answering_player_turn').innerHTML = players.player1.nickname + "'s turn to answer...";
+  }
+
+  // Populate timer for answering_qns_state
+  if (difficulty_level === "easy") {
+   var time_to_answer_easy = quiz_questions.difficulty_level.easy;
+   document.getElementById('answering_timer').innerHTML = time_to_answer_easy;
+   time_to_answer = time_to_answer_easy;
+  }
+  else if (difficulty_level === "medium") {
+   var time_to_answer_medium = quiz_questions.difficulty_level.medium;
+   document.getElementById('answering_timer').innerHTML = time_to_answer_medium;
+   time_to_answer = time_to_answer_medium;
+  }
+  else if (difficulty_level === "hard") {
+   var time_to_answer_hard = quiz_questions.difficulty_level.hard;
+   document.getElementById('answering_timer').innerHTML = time_to_answer_hard;
+   time_to_answer = time_to_answer_hard;
+  }
+
+  // Populate image for current question
+  var current_qns_image = quiz_questions.topics[topic_quiz][current_qns_count].image;
+  // Assign the image src attribute based on it's id
+  document.getElementById('answering_qns_img').src = current_qns_image;
+
+  // Populate the 4 options for current question
+  var option1 = quiz_questions.topics[topic_quiz][current_qns_count].options.option_1;
+  var option2 = quiz_questions.topics[topic_quiz][current_qns_count].options.option_2;
+  var option3 = quiz_questions.topics[topic_quiz][current_qns_count].options.option_3;
+  var option4 = quiz_questions.topics[topic_quiz][current_qns_count].options.option_4;
+  // Assign the innerHTML of the 4 options based on it's id
+  document.getElementById('answering_option1').innerHTML = option1;
+  document.getElementById('answering_option2').innerHTML = option2;
+  document.getElementById('answering_option3').innerHTML = option3;
+  document.getElementById('answering_option4').innerHTML = option4;
+}
+
+// -----------------------------Main Game--------------------------------------
 window.onload = function(){
   // Make the first state visible - set_player_details_state
   document.getElementById('set_player_details_state').display = "inline";
@@ -589,5 +1337,5 @@ window.onload = function(){
 
   // Add event listener on startgame_bt id
   var start_game_button = document.getElementById('startgame_bt');
-  start_game_button.addEventListener('click', start_quiz);
+  start_game_button.addEventListener('click', populate_quiz_question);
 }

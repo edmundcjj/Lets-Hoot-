@@ -32,18 +32,18 @@
         <!-- Player 1 Nickname Input Field-->
         <div class="input-group mb-3">
           <div class="input-group-prepend">
-            <span class="input-group-text"><h2>P1 Nick</h2></span>
+            <span class="input-group-text"><h2>Player 1</h2></span>
           </div>
-          <input type="text" class="form-control" id="player1_nickname">
+          <input type="text" class="form-control" id="player1_nickname" placeholder="Enter name...">
         </div>
         <!-- Random assign a avatar to player 1 -->
         <br><br><br>
         <!-- Player 2 Nickname Input Field-->
         <div class="input-group mb-3">
           <div class="input-group-prepend">
-            <span class="input-group-text"><h2>P2 Nick</h2></span>
+            <span class="input-group-text"><h2>Player 2</h2></span>
           </div>
-          <input type="text" class="form-control" id="player2_nickname">
+          <input type="text" class="form-control" id="player2_nickname" placeholder="Enter name...">
         </div>
         <!-- Random assign a avatar to player 1 -->
       </div>
@@ -162,42 +162,42 @@
     <div id="answering_qns_state">
       <!-- Current Question and question Number -->
       <div class="d-flex p-2 align-items-center justify-content-center flex-row game_answering_header">
-        <h5 id="answering_qns_title">Q1: What is the correct HTML for referring to an external style sheet?</h5>
+        <!-- <h5 id="answering_qns_title">Q1: What is the correct HTML for referring to an external style sheet?</h5> -->
       </div>
 
       <!-- Display whose turn is it now -->
       <div class="d-flex p-2 align-items-center justify-content-center flex-row game_player_turn">
-        <h5 id="answering_player_turn">Edmund's turn to answer...</h5>
+        <!-- <h5 id="answering_player_turn">Edmund's turn to answer...</h5> -->
       </div>
 
       <!-- Display image that will aid players in answering the question -->
       <div class="d-flex p-2 align-items-center justify-content-between flex-row game_answering_details">
         <!-- Timer Countdown -->
-        <span class="border_timer rounded-circle"><h5>60</h5></span>
+        <span class="border_timer rounded-circle"><h5 id="answering_timer"></h5></span>
 
         <!-- Qns Image -->
-        <img src="img/test_qns.png" alt="" class="img-thumbnail answering_qns_img">
+        <img src="" alt="" class="img-thumbnail answering_qns_img" id="answering_qns_img">
 
         <!-- Skip Button -->
-        <button type="button" class="btn btn-primary">Skip</button>
+        <button type="button" class="btn btn-primary" id="answering_skipbt">Skip</button>
       </div>
 
       <!-- Display question option 1 -->
       <div class="d-flex p-2 flex-row game_answering_options_1">
         <!-- Option 1 -->
-        <h1 class="answering_option1 d-flex p-2 align-items-center justify-content-center view zoom">Option 1</h1>
+        <h1 class="answering_option1 d-flex p-2 align-items-center justify-content-center view zoom" id="answering_option1">Option 1</h1>
 
         <!-- Option 2 -->
-        <h1 class="answering_option2 d-flex p-2 align-items-center justify-content-center">Option 2</h1>
+        <h1 class="answering_option2 d-flex p-2 align-items-center justify-content-center" id="answering_option2">Option 2</h1>
       </div>
 
       <!-- Display question option 3 -->
       <div class="d-flex p-2 flex-row game_answering_options_2">
         <!-- Option 3 -->
-        <h1 class="answering_option3 d-flex p-2 align-items-center justify-content-center">Option 3</h1>
+        <h1 class="answering_option3 d-flex p-2 align-items-center justify-content-center" id="answering_option3">Option 3</h1>
 
         <!-- Option 4 -->
-        <h1 class="answering_option4 d-flex p-2 align-items-center justify-content-center">Option 4</h1>
+        <h1 class="answering_option4 d-flex p-2 align-items-center justify-content-center" id="answering_option4">Option 4</h1>
       </div>
     </div>
 
@@ -218,12 +218,12 @@
       <div class="d-flex p-2 align-items-center justify-content-center flex-column scoreboard_main">
         <div class="d-flex p-2 align-items-center justify-content-between flex-row scoreboard_p1">
           <h5 id="scoreboard_p1_name">Edmund</h5>
-          <h5 id="scoreboard_p1">100</h5>
+          <h5 id="scoreboard_p1_points">100</h5>
         </div>
         <br><br><br>
         <div class="d-flex p-2 align-items-center justify-content-between flex-row scoreboard_p2">
           <h5 id="scoreboard_p2_name">Rebekah</h5>
-          <h5 id="scoreboard_p2">200</h5>
+          <h5 id="scoreboard_p2_points">200</h5>
         </div>
       </div>
     </div>

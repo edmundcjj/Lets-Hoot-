@@ -376,6 +376,12 @@ h1{
 #gameover_state{
   display: none;
 }
+#player1_nickname{
+  padding-left: 1%;
+}
+#player2_nickname{
+  padding-left: 1%;
+}
 
 
 
