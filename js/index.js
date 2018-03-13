@@ -9,8 +9,8 @@ var current_qns_title = "";                   // Title of current question
 var rounds_of_answer = 0;
 var progress = 0;                             // initial value of your progress bar
 var timeout = 50;                             // number of milliseconds between each frame
-var increment = .5;                           // increment for each frame
-var maxprogress = 110;                        // when to leave stop running the animation
+var increment = 2;                           // increment for each frame
+var maxprogress = 152;                         // when to leave stop running the animation
 var time_to_answer = 0;                       // Current time in secs to answer question
 var timer;                                    // Interval timer for countdown timer
 var replay_counter = 0;                       // To keep track the number of times the game has been replayed
@@ -1082,6 +1082,14 @@ function populate_results(){
   else if (players.player1.answer_correct === true) {
     // Player 1 answer is correct
     document.getElementById('result_answer_p1_outcome').innerHTML = "CORRECT";
+  }
+
+  // Scenario where both players have the equal total score
+  if (players.player1.total_pts === players.player2.total_pts) {
+    document.getElementById('result_player1_placing').innerHTML = "1ST PLACE";
+    document.getElementById('result_player2_placing').innerHTML = "1ST PLACE";
+    document.getElementById('result_player1_pts_ahead_behind').innerHTML = "0 PTS DIFF";
+    document.getElementById('result_player2_pts_ahead_behind').innerHTML = "0 PTS DIFF";
   }
 
   // Display placing for player 1
