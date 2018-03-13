@@ -21,9 +21,9 @@ var reset_counter = 0;
 // Questions object
 var quiz_questions = {
   "difficulty_level": {
-    "easy": 60,
-    "medium": 40,
-    "hard": 30
+    "easy": 30,
+    "medium": 20,
+    "hard": 10
   },
   "topics": {
     "css": [
@@ -606,8 +606,8 @@ var quiz_questions = {
  // Handle events for skip button and option chosen by player
  function start_answering_timer(){
    // Code to animate the countdown timer
-   // time_to_answer = quiz_questions.difficulty_level[difficulty_level];
-   time_to_answer = 10; // For testing purposes, use 10 secs timer
+   time_to_answer = quiz_questions.difficulty_level[difficulty_level];
+   // time_to_answer = 10; // For testing purposes, use 10 secs timer
    console.log("Current time to answer question = " + time_to_answer);
 
    timer = setInterval(function() {
