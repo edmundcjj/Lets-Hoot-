@@ -1,28 +1,26 @@
 
-
 // ----------------------------Global Variables---------------------------------
 var topic_quiz = "";                          // Topic chosen for quiz by players
 var difficulty_level = "";                    // Level of difficulty chosen by players
 var total_questions = 0;                      // Number of total questions based on topic chosen
 var current_qns_count = 0;                    // Qns number of current question
 var current_qns_title = "";                   // Title of current question
-var rounds_of_answer = 0;
+var rounds_of_answer = 0;                     // variable to determine whether its player 1 or 2 turn's to answer
 var progress = 0;                             // initial value of your progress bar
 var timeout = 50;                             // number of milliseconds between each frame
-var increment = 2;                           // increment for each frame
-var maxprogress = 152;                         // when to leave stop running the animation
+var increment = 2;                            // value increment for each frame
+var maxprogress = 152;                        // when to leave, stop running the animation
 var time_to_answer = 0;                       // Current time in secs to answer question
 var timer;                                    // Interval timer for countdown timer
 var replay_counter = 0;                       // To keep track the number of times the game has been replayed
 var reset_counter = 0;                        // To keep track the number of times the game has been reset
 
-
 // ------------------------------- Objects -------------------------------------
 // Questions object
 var quiz_questions = {
   "difficulty_level": {
-    "easy": 30,
-    "medium": 20,
+    "easy": 20,
+    "medium": 10,
     "hard": 5
   },
   "topics": {
@@ -30,7 +28,7 @@ var quiz_questions = {
       {
         "question_number": 1,
         "title":"HTML tag for the largest heading?",
-        "image": "img/test_qns.png",
+        "image": "img/qns_1_image.jpg",
         "options": {
           "option_1": "Head",
           "option_2": "h1",
@@ -43,7 +41,7 @@ var quiz_questions = {
       {
         "question_number": 2,
         "title":"CSS value to make a text bold?",
-        "image": "img/test_qns.png",
+        "image": "img/qns_2_image.png",
         "options": {
           "option_1": "bold",
           "option_2": "margin",
@@ -56,7 +54,7 @@ var quiz_questions = {
       {
         "question_number": 3,
         "title":"CSS value to make a text italic?",
-        "image": "img/test_qns.png",
+        "image": "img/qns_3_image.png",
         "options": {
           "option_1": "padding",
           "option_2": "italy",
@@ -69,7 +67,7 @@ var quiz_questions = {
       {
         "question_number": 4,
         "title":"C in CSS stands for?",
-        "image": "img/test_qns.png",
+        "image": "img/qns_4_image.jpg",
         "options": {
           "option_1": "Casdacing",
           "option_2": "Calling",
@@ -82,7 +80,7 @@ var quiz_questions = {
       {
         "question_number": 5,
         "title":"HTML tag to create drop-down list?",
-        "image": "img/test_qns.png",
+        "image": "img/qns_5_image.png",
         "options": {
           "option_1": "select",
           "option_2": "options",
@@ -94,8 +92,8 @@ var quiz_questions = {
       },
       {
         "question_number": 6,
-        "title":"Child element of <select> tag?",
-        "image": "img/test_qns.png",
+        "title":"Child element of select tag?",
+        "image": "img/qns_6_image.png",
         "options": {
           "option_1": "drop-down",
           "option_2": "li",
@@ -108,7 +106,7 @@ var quiz_questions = {
       {
         "question_number": 7,
         "title":"Syntax of comments in CSS?",
-        "image": "img/test_qns.png",
+        "image": "img/qns_7_image.png",
         "options": {
           "option_1": "//",
           "option_2": "/*  */",
@@ -121,7 +119,7 @@ var quiz_questions = {
       {
         "question_number": 8,
         "title":"Property to change font color?",
-        "image": "img/test_qns.png",
+        "image": "img/qns_8_image.png",
         "options": {
           "option_1": "font-color",
           "option_2": "color",
@@ -134,7 +132,7 @@ var quiz_questions = {
       {
         "question_number": 9,
         "title":"Property to change left margin?",
-        "image": "img/test_qns.png",
+        "image": "img/qns_9_image.png",
         "options": {
           "option_1": "margin-left",
           "option_2": "padding",
@@ -147,7 +145,7 @@ var quiz_questions = {
       {
         "question_number": 10,
         "title":"HTML tag to make unordered list?",
-        "image": "img/test_qns.png",
+        "image": "img/qns_10_image.png",
         "options": {
           "option_1": "li",
           "option_2": "ul",
@@ -605,11 +603,11 @@ var quiz_questions = {
  // Function to start the timer countdown for answering_qns_state as well as
  // Handle events for skip button and option chosen by player
  function start_answering_timer(){
-   // Code to animate the countdown timer
+   // Initialize the answering timer based on the difficulty level chosen by players
    time_to_answer = quiz_questions.difficulty_level[difficulty_level];
-   // time_to_answer = 10; // For testing purposes, use 10 secs timer
    console.log("Current time to answer question = " + time_to_answer);
 
+   // Code to animate the countdown timer
    timer = setInterval(function() {
    document.getElementById('answering_timer').innerHTML = time_to_answer;
    console.log("Time left to answer: " + time_to_answer);
@@ -1066,7 +1064,7 @@ function skip_button_handler(){
 // Function to populate result_qns_state
 function populate_results(){
   // Display current question title
-  document.getElementById('result_qns_title').innerHTML = current_qns_title;
+  document.getElementById('result_qns_title').innerHTML = quiz_questions.topics[topic_quiz][current_qns_count].title;
 
   // Display players name on the results page
   document.getElementById('result_player1_name').innerHTML = players.player1.nickname;
