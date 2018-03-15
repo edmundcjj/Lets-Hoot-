@@ -124,13 +124,16 @@ h1{
   padding: 0;
 }
 .border_timer{
-  border: 20px solid #864CBF;
   background-color: #864CBF;
-}
-.border_timer > h5{
-  color: white;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  color: #ffffff;
+  display: inline-block;
   font-weight: bold;
-  font-size: 1.5rem;
+  line-height: 2.5em;
+  text-align: center;
+  width: 2.5em;
 }
 .answering_qns_img{
   height: 200px;
@@ -138,27 +141,45 @@ h1{
 }
 .answering_option1{
   background-color: #E21B3C;
-  color: white;
   width: 100vh;
   margin-right: .25rem;
+  /* font-size: 1.7rem; */
+}
+.answering_option1:active{
+  box-shadow: 0 5px black;
+  transform: translateY(4px);
 }
 .answering_option2{
   background-color: #1368CE;
-  color: white;
   width: 100vh;
   margin-left: .25rem;
+  /* font-size: 1.7rem; */
+}
+.answering_option2:active{
+  box-shadow: 0 5px black;
+  transform: translateY(4px);
 }
 .answering_option3{
   background-color: #D89E00;
-  color: white;
+  /* color: white; */
   width: 100vh;
   margin-right: .25rem;
+  /* font-size: 1.7rem; */
+}
+.answering_option3:active{
+  box-shadow: 0 5px black;
+  transform: translateY(-4px);
 }
 .answering_option4{
   background-color: #298F0D;
-  color: white;
+  /* color: white; */
   width: 100vh;
   margin-left: .25rem;
+  /* font-size: 1.7rem; */
+}
+.answering_option4:active{
+  box-shadow: 0 5px black;
+  transform: translateY(-4px);
 }
 .game_answering_options_1 > .answering_option1:hover{
   background-color: #f16f5c;
@@ -382,7 +403,78 @@ h1{
 #player2_nickname{
   padding-left: 1%;
 }
-
+#answering_option1{
+  color: white;
+  font-size: 1.7rem;
+}
+#answering_option2{
+  color: white;
+  font-size: 1.7rem;
+}
+#answering_option3{
+  color: white;
+  font-size: 1.7rem;
+}
+#answering_option4{
+  color: white;
+  font-size: 1.7rem;
+}
+#answering_option1_correct_emoji{
+  /* visibility: hidden; */
+  display: none;
+  height: 40px;
+  width: 40px;
+  margin-left: .5rem;
+}
+#answering_option1_wrong_emoji{
+  /* visibility: visible; */
+  display: none;
+  height: 40px;
+  width: 40px;
+  margin-left: .5rem;
+}
+#answering_option2_correct_emoji{
+  /* visibility: hidden; */
+  display: none;
+  height: 40px;
+  width: 40px;
+  margin-left: .5rem;
+}
+#answering_option2_wrong_emoji{
+  /* visibility: visible; */
+  display: none;
+  height: 40px;
+  width: 40px;
+  margin-left: .5rem;
+}
+#answering_option3_correct_emoji{
+  /* visibility: hidden; */
+  display: none;
+  height: 40px;
+  width: 40px;
+  margin-left: .5rem;
+}
+#answering_option3_wrong_emoji{
+  /* visibility: visible; */
+  display: none;
+  height: 40px;
+  width: 40px;
+  margin-left: .5rem;
+}
+#answering_option4_correct_emoji{
+  /* visibility: hidden; */
+  display: none;
+  height: 40px;
+  width: 40px;
+  margin-left: .5rem;
+}
+#answering_option4_wrong_emoji{
+  /* visibility: visible; */
+  display: none;
+  height: 40px;
+  width: 40px;
+  margin-left: .5rem;
+}
 
 
 /* ---------------------------Media Queries---------------------------------- */
@@ -418,14 +510,20 @@ No media query since this is the default in Bootstrap */
   .game_details_main > h5{
     font-size: 2rem;
   }
-  .border_timer{
-    border: 30px solid #864CBF;
-    background-color: #864CBF;
+  .game_answering_details > h5{
+    font-size: 2rem;
   }
-  .border_timer > h5{
-    font-size: 2.5rem;
+  .border_timer{
+    background-color: #864CBF;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    color: #ffffff;
+    display: inline-block;
     font-weight: bold;
-    color: white;
+    line-height: 2.5em;
+    text-align: center;
+    width: 2.5em;
   }
   .answering_qns_img{
     height: 400px;
@@ -433,6 +531,62 @@ No media query since this is the default in Bootstrap */
   }
   .btn{
     font-size: 2rem;
+  }
+  /* .answering_option1{
+    font-size: 3rem;
+  }
+  .answering_option2{
+    font-size: 3rem;
+  }
+  .answering_option3{
+    font-size: 3rem;
+  }
+  .answering_option4{
+    font-size: 3rem;
+  } */
+  #answering_option1{
+    font-size: 3rem;
+  }
+  #answering_option2{
+    font-size: 3rem;
+  }
+  #answering_option3{
+    font-size: 3rem;
+  }
+  #answering_option4{
+    font-size: 3rem;
+  }
+  #answering_option1_correct_emoji{
+    height: 60px;
+    width: 60px;
+  }
+  #answering_option1_wrong_emoji{
+    height: 60px;
+    width: 60px;
+  }
+  #answering_option2_correct_emoji{
+    height: 60px;
+    width: 60px;
+  }
+  #answering_option2_wrong_emoji{
+    height: 60px;
+    width: 60px;
+  }
+  #answering_option3_correct_emoji{
+    height: 60px;
+    width: 60px;
+  }
+  #answering_option3_wrong_emoji{
+    height: 60px;
+    width: 60px;
+  }
+  #answering_option4_correct_emoji{
+    height: 60px;
+    width: 60px;
+  }
+  #answering_option4_wrong_emoji{
+    height: 60px;
+    width: 60px;
   }
   .game_answering_header > h5{
     font-size: 2rem;
@@ -511,17 +665,79 @@ No media query since this is the default in Bootstrap */
   .btn{
     font-size: 2.5rem;
   }
+  /* .answering_option1{
+    font-size: 4rem;
+  }
+  .answering_option2{
+    font-size: 4rem;
+  }
+  .answering_option3{
+    font-size: 4rem;
+  }
+  .answering_option4{
+    font-size: 4rem;
+  } */
+  #answering_option1{
+    font-size: 4rem;
+  }
+  #answering_option2{
+    font-size: 4rem;
+  }
+  #answering_option3{
+    font-size: 4rem;
+  }
+  #answering_option4{
+    font-size: 4rem;
+  }
+  #answering_option1_correct_emoji{
+    height: 80px;
+    width: 80px;
+  }
+  #answering_option1_wrong_emoji{
+    height: 80px;
+    width: 80px;
+  }
+  #answering_option2_correct_emoji{
+    height: 80px;
+    width: 80px;
+  }
+  #answering_option2_wrong_emoji{
+    height: 80px;
+    width: 80px;
+  }
+  #answering_option3_correct_emoji{
+    height: 80px;
+    width: 80px;
+  }
+  #answering_option3_wrong_emoji{
+    height: 80px;
+    width: 80px;
+  }
+  #answering_option4_correct_emoji{
+    height: 80px;
+    width: 80px;
+  }
+  #answering_option4_wrong_emoji{
+    height: 80px;
+    width: 80px;
+  }
   .game_details_main > h5{
     font-size: 2.5rem;
   }
-  .border_timer{
-    border: 35px solid #864CBF;
-    background-color: #864CBF;
-  }
-  .border_timer > h5{
+  .game_answering_details > h5{
     font-size: 3rem;
+  }
+  .border_timer{
+    background-color: #864CBF;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    color: #ffffff;
+    display: inline-block;
     font-weight: bold;
-    color: white;
+    line-height: 2.5em;
+    text-align: center;
+    width: 2.5em;
   }
   .answering_qns_img{
     height: 500px;
