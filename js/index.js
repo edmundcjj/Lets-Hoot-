@@ -30,7 +30,7 @@ var quiz_questions = {
       {
         "question_number": 1,
         "title":"HTML tag for the largest heading?",
-        "image": "img/css/qns_1_image.jpg",
+        "image": "img/random/qns_1_image.jpg",
         "options": {
           "option_1": "Head",
           "option_2": "h1",
@@ -44,7 +44,7 @@ var quiz_questions = {
       {
         "question_number": 2,
         "title":"CSS value to make a text bold?",
-        "image": "img/css/qns_2_image.png",
+        "image": "img/random/qns_2_image.PNG",
         "options": {
           "option_1": "bold",
           "option_2": "margin",
@@ -58,7 +58,7 @@ var quiz_questions = {
       {
         "question_number": 3,
         "title":"CSS value to make a text italic?",
-        "image": "img/css/qns_3_image.png",
+        "image": "img/random/qns_3_image.PNG",
         "options": {
           "option_1": "padding",
           "option_2": "italy",
@@ -72,7 +72,7 @@ var quiz_questions = {
       {
         "question_number": 4,
         "title":"C in CSS stands for?",
-        "image": "img/css/qns_4_image.jpg",
+        "image": "img/random/qns_4_image.jpg",
         "options": {
           "option_1": "Casdacing",
           "option_2": "Calling",
@@ -86,7 +86,7 @@ var quiz_questions = {
       {
         "question_number": 5,
         "title":"HTML tag to create drop-down list?",
-        "image": "img/css/qns_5_image.png",
+        "image": "img/random/qns_5_image.PNG",
         "options": {
           "option_1": "select",
           "option_2": "options",
@@ -100,7 +100,7 @@ var quiz_questions = {
       {
         "question_number": 6,
         "title":"Child element of select tag?",
-        "image": "img/css/qns_6_image.png",
+        "image": "img/random/qns_6_image.PNG",
         "options": {
           "option_1": "drop-down",
           "option_2": "li",
@@ -114,7 +114,7 @@ var quiz_questions = {
       {
         "question_number": 7,
         "title":"Syntax of comments in CSS?",
-        "image": "img/css/qns_7_image.png",
+        "image": "img/random/qns_7_image.PNG",
         "options": {
           "option_1": "//",
           "option_2": "/*  */",
@@ -128,7 +128,7 @@ var quiz_questions = {
       {
         "question_number": 8,
         "title":"Property to change font color?",
-        "image": "img/css/qns_8_image.png",
+        "image": "img/random/qns_8_image.PNG",
         "options": {
           "option_1": "font-color",
           "option_2": "color",
@@ -142,7 +142,7 @@ var quiz_questions = {
       {
         "question_number": 9,
         "title":"Property to change left margin?",
-        "image": "img/css/qns_9_image.png",
+        "image": "img/random/qns_9_image.PNG",
         "options": {
           "option_1": "margin-left",
           "option_2": "padding",
@@ -156,7 +156,7 @@ var quiz_questions = {
       {
         "question_number": 10,
         "title":"HTML tag to make unordered list?",
-        "image": "img/css/qns_10_image.png",
+        "image": "img/random/qns_10_image.PNG",
         "options": {
           "option_1": "li",
           "option_2": "ul",
