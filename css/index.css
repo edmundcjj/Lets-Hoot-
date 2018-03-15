@@ -50,9 +50,27 @@ h1{
 .game_header > h1{
   color: white;
 }
+.game_set_details_header{
+  background-color: #66bf39;
+  height: 10vh;
+}
+.game_set_details_header > h1{
+  color: white;
+}
+.game_set_details_header{
+  background-color: #66bf39;
+  height: 10vh;
+}
+.game_display_details_header{
+  background-color: #45a3e5;
+  height: 10vh;
+}
+.game_display_details_header > h1{
+  color: white;
+}
 .game_details_header{
   height: 10vh;
-  background-color: #F35329;
+  background-color: #3987bf;
 }
 .game_details_header > h2{
   font-size: 1.5rem;
@@ -64,18 +82,22 @@ h1{
 }
 .game_players_names{
   height: 10vh;
-  background-color: #F35329;
+  background-color: #3987bf;
 }
 .game_players_names > h2{
   font-size: 1.5rem;
   color: white;
+}
+.game_set_details_main{
+  height: 80vh;
+  background-color: #51992e;
 }
 .game_loader_bar{
   height: 5vh;
 }
 .game_details_main{
   height: 70vh;
-  background-color: #F35329;
+  background-color: #3987bf;
 }
 .game_details_main > h2{
   color: white;
@@ -130,6 +152,14 @@ h1{
   background-color: #F35329;
 }
 .game_footer > button{
+  background-color: #333333;
+  border: #333333;
+}
+.game_set_details_footer{
+  background-color: #51992e;
+  height: 10vh;
+}
+.game_set_details_footer > button{
   background-color: #333333;
   border: #333333;
 }
