@@ -14,6 +14,8 @@ var time_to_answer = 0;                       // Current time in secs to answer 
 var timer;                                    // Interval timer for countdown timer
 var replay_counter = 0;                       // To keep track the number of times the game has been replayed
 var reset_counter = 0;                        // To keep track the number of times the game has been reset
+var correct_answer_emoji_image = "img/correct_answer_emoji.png";
+var wrong_answer_emoji_image = "img/wrong_answer_emoji.png";
 
 // ------------------------------- Objects -------------------------------------
 // Questions object
@@ -28,7 +30,7 @@ var quiz_questions = {
       {
         "question_number": 1,
         "title":"HTML tag for the largest heading?",
-        "image": "img/qns_1_image.jpg",
+        "image": "img/css/qns_1_image.jpg",
         "options": {
           "option_1": "Head",
           "option_2": "h1",
@@ -41,7 +43,7 @@ var quiz_questions = {
       {
         "question_number": 2,
         "title":"CSS value to make a text bold?",
-        "image": "img/qns_2_image.png",
+        "image": "img/css/qns_2_image.png",
         "options": {
           "option_1": "bold",
           "option_2": "margin",
@@ -54,7 +56,7 @@ var quiz_questions = {
       {
         "question_number": 3,
         "title":"CSS value to make a text italic?",
-        "image": "img/qns_3_image.png",
+        "image": "img/css/qns_3_image.png",
         "options": {
           "option_1": "padding",
           "option_2": "italy",
@@ -67,7 +69,7 @@ var quiz_questions = {
       {
         "question_number": 4,
         "title":"C in CSS stands for?",
-        "image": "img/qns_4_image.jpg",
+        "image": "img/css/qns_4_image.jpg",
         "options": {
           "option_1": "Casdacing",
           "option_2": "Calling",
@@ -80,7 +82,7 @@ var quiz_questions = {
       {
         "question_number": 5,
         "title":"HTML tag to create drop-down list?",
-        "image": "img/qns_5_image.png",
+        "image": "img/css/qns_5_image.png",
         "options": {
           "option_1": "select",
           "option_2": "options",
@@ -93,7 +95,7 @@ var quiz_questions = {
       {
         "question_number": 6,
         "title":"Child element of select tag?",
-        "image": "img/qns_6_image.png",
+        "image": "img/css/qns_6_image.png",
         "options": {
           "option_1": "drop-down",
           "option_2": "li",
@@ -106,7 +108,7 @@ var quiz_questions = {
       {
         "question_number": 7,
         "title":"Syntax of comments in CSS?",
-        "image": "img/qns_7_image.png",
+        "image": "img/css/qns_7_image.png",
         "options": {
           "option_1": "//",
           "option_2": "/*  */",
@@ -119,7 +121,7 @@ var quiz_questions = {
       {
         "question_number": 8,
         "title":"Property to change font color?",
-        "image": "img/qns_8_image.png",
+        "image": "img/css/qns_8_image.png",
         "options": {
           "option_1": "font-color",
           "option_2": "color",
@@ -132,7 +134,7 @@ var quiz_questions = {
       {
         "question_number": 9,
         "title":"Property to change left margin?",
-        "image": "img/qns_9_image.png",
+        "image": "img/css/qns_9_image.png",
         "options": {
           "option_1": "margin-left",
           "option_2": "padding",
@@ -145,7 +147,7 @@ var quiz_questions = {
       {
         "question_number": 10,
         "title":"HTML tag to make unordered list?",
-        "image": "img/qns_10_image.png",
+        "image": "img/css/qns_10_image.png",
         "options": {
           "option_1": "li",
           "option_2": "ul",
@@ -159,262 +161,262 @@ var quiz_questions = {
     "html": [
       {
         "question_number": 1,
-        "title":"",
+        "title":"HTML tag to define content aside from main content",
         "image": "",
         "options": {
-          "option_1": "",
-          "option_2": "",
-          "option_3": "",
-          "option_4": "",
+          "option_1": "legend",
+          "option_2": "body",
+          "option_3": "header",
+          "option_4": "aside",
         },
-        "answer": "",
+        "answer": "option_4",
         "rounds_of_answer": 0
       },
       {
         "question_number": 2,
-        "title":"",
+        "title":"HTML element to group body content in a table",
         "image": "",
         "options": {
-          "option_1": "",
-          "option_2": "",
-          "option_3": "",
-          "option_4": "",
+          "option_1": "tbody",
+          "option_2": "tfoot",
+          "option_3": "thead",
+          "option_4": "theader",
         },
-        "answer": "",
+        "answer": "option_1",
         "rounds_of_answer": 0
       },
       {
         "question_number": 3,
-        "title":"",
+        "title":"Alternative tag to make text bold",
         "image": "",
         "options": {
-          "option_1": "",
-          "option_2": "",
-          "option_3": "",
-          "option_4": "",
+          "option_1": "bold",
+          "option_2": "double",
+          "option_3": "strong",
+          "option_4": "dark",
         },
-        "answer": "",
+        "answer": "option_3",
         "rounds_of_answer": 0
       },
       {
         "question_number": 4,
-        "title":"",
+        "title":"Types of elements in a HTML form",
         "image": "",
         "options": {
-          "option_1": "",
-          "option_2": "",
-          "option_3": "",
-          "option_4": "",
+          "option_1": "Input",
+          "option_2": "Text",
+          "option_3": "Submit",
+          "option_4": "ALL",
         },
-        "answer": "",
+        "answer": "option_4",
         "rounds_of_answer": 0
       },
       {
         "question_number": 5,
-        "title":"",
+        "title":"Fundamental tag in a HTML block",
         "image": "",
         "options": {
-          "option_1": "",
-          "option_2": "",
-          "option_3": "",
-          "option_4": "",
+          "option_1": "!DOCTYPE",
+          "option_2": "HTML",
+          "option_3": "BODY",
+          "option_4": "P",
         },
-        "answer": "",
+        "answer": "option_1",
         "rounds_of_answer": 0
       },
       {
         "question_number": 6,
-        "title":"",
+        "title":"Define special style in HTML, use __?",
         "image": "",
         "options": {
-          "option_1": "",
-          "option_2": "",
-          "option_3": "",
-          "option_4": "",
+          "option_1": "class",
+          "option_2": "id",
+          "option_3": "padding",
+          "option_4": "tr",
         },
-        "answer": "",
+        "answer": "option_2",
         "rounds_of_answer": 0
       },
       {
         "question_number": 7,
-        "title":"",
+        "title":"Element 'em' defines ___ text",
         "image": "",
         "options": {
-          "option_1": "",
-          "option_2": "",
-          "option_3": "",
-          "option_4": "",
+          "option_1": "Normal",
+          "option_2": "Strong",
+          "option_3": "Exponent",
+          "option_4": "Emphasized",
         },
-        "answer": "",
+        "answer": "option_4",
         "rounds_of_answer": 0
       },
       {
         "question_number": 8,
-        "title":"",
+        "title":"No. of attributes required for div element",
         "image": "",
         "options": {
-          "option_1": "",
-          "option_2": "",
-          "option_3": "",
-          "option_4": "",
+          "option_1": "0",
+          "option_2": "1",
+          "option_3": "2",
+          "option_4": "3",
         },
-        "answer": "",
+        "answer": "option_1",
         "rounds_of_answer": 0
       },
       {
         "question_number": 9,
-        "title":"",
+        "title":"Article defined with ___ tag",
         "image": "",
         "options": {
-          "option_1": "",
-          "option_2": "",
-          "option_3": "",
-          "option_4": "",
+          "option_1": "title",
+          "option_2": "header",
+          "option_3": "caption",
+          "option_4": "article",
         },
-        "answer": "",
+        "answer": "option_4",
         "rounds_of_answer": 0
       },
       {
         "question_number": 10,
-        "title":"",
+        "title":"Data type of an array is",
         "image": "",
         "options": {
-          "option_1": "",
-          "option_2": "",
-          "option_3": "",
-          "option_4": "",
+          "option_1": "Char",
+          "option_2": "int",
+          "option_3": "object",
+          "option_4": "NaN",
         },
-        "answer": "",
+        "answer": "option_3",
         "rounds_of_answer": 0
       },
     ],
-    "JavaScript": [
+    "javaScript": [
       {
         "question_number": 1,
-        "title":"",
+        "title":"Built-in method to assess each array element",
         "image": "",
         "options": {
-          "option_1": "",
-          "option_2": "",
-          "option_3": "",
-          "option_4": "",
+          "option_1": "while()",
+          "option_2": "for()",
+          "option_3": "forEach()",
+          "option_4": "None",
         },
-        "answer": "",
+        "answer": "option_3",
         "rounds_of_answer": 0
       },
       {
         "question_number": 2,
-        "title":"",
+        "title":"Built-in method to convert to string",
         "image": "",
         "options": {
-          "option_1": "",
-          "option_2": "",
-          "option_3": "",
-          "option_4": "",
+          "option_1": "toValue()",
+          "option_2": "toString()",
+          "option_3": "toNumber()",
+          "option_4": "ALL",
         },
-        "answer": "",
+        "answer": "option_2",
         "rounds_of_answer": 0
       },
       {
         "question_number": 3,
-        "title":"",
+        "title":"Funcion to combine 2 strings & return new string",
         "image": "",
         "options": {
-          "option_1": "",
-          "option_2": "",
-          "option_3": "",
-          "option_4": "",
+          "option_1": "add()",
+          "option_2": "merge()",
+          "option_3": "concat()",
+          "option_4": "None",
         },
-        "answer": "",
+        "answer": "option_3",
         "rounds_of_answer": 0
       },
       {
         "question_number": 4,
-        "title":"",
+        "title":"Function to extract a section of a string",
         "image": "",
         "options": {
-          "option_1": "",
-          "option_2": "",
-          "option_3": "",
-          "option_4": "",
+          "option_1": "split()",
+          "option_2": "slice()",
+          "option_3": "replace()",
+          "option_4": "search()",
         },
-        "answer": "",
+        "answer": "option_2",
         "rounds_of_answer": 0
       },
       {
         "question_number": 5,
-        "title":"",
+        "title":"Method to remove last array element",
         "image": "",
         "options": {
-          "option_1": "",
-          "option_2": "",
-          "option_3": "",
-          "option_4": "",
+          "option_1": "push()",
+          "option_2": "pop()",
+          "option_3": "merge()",
+          "option_4": "add()",
         },
-        "answer": "",
+        "answer": "option_2",
         "rounds_of_answer": 0
       },
       {
         "question_number": 6,
-        "title":"",
+        "title":"Method to add new elements to start of array",
         "image": "",
         "options": {
-          "option_1": "",
-          "option_2": "",
-          "option_3": "",
-          "option_4": "",
+          "option_1": "shift()",
+          "option_2": "unshift()",
+          "option_3": "add()",
+          "option_4": "marge()",
         },
-        "answer": "",
+        "answer": "option_2",
         "rounds_of_answer": 0
       },
       {
         "question_number": 7,
-        "title":"",
+        "title":"Can you access Cookie using javascript?",
         "image": "",
         "options": {
-          "option_1": "",
-          "option_2": "",
-          "option_3": "",
-          "option_4": "",
+          "option_1": "True",
+          "option_2": "False",
+          "option_3": "None",
+          "option_4": "ALL",
         },
-        "answer": "",
+        "answer": "option_1",
         "rounds_of_answer": 0
       },
       {
         "question_number": 8,
-        "title":"",
+        "title":"Which event fires whenever a control loses focus?",
         "image": "",
         "options": {
-          "option_1": "",
-          "option_2": "",
-          "option_3": "",
-          "option_4": "",
+          "option_1": "onclick",
+          "option_2": "onmove",
+          "option_3": "onblur",
+          "option_4": "onchange",
         },
-        "answer": "",
+        "answer": "option_3",
         "rounds_of_answer": 0
       },
       {
         "question_number": 9,
-        "title":"",
+        "title":"Math.random() returns ___",
         "image": "",
         "options": {
-          "option_1": "",
-          "option_2": "",
-          "option_3": "",
-          "option_4": "",
+          "option_1": "Values 0-1",
+          "option_2": "Values 0-1000",
+          "option_3": "Values 0-100",
+          "option_4": "Values 0-10",
         },
-        "answer": "",
+        "answer": "option_1",
         "rounds_of_answer": 0
       },
       {
         "question_number": 10,
-        "title":"",
-        "image": "",
+        "title":"What is the result of a?",
+        "image": "img/javascript/qns_10_image.png",
         "options": {
-          "option_1": "",
-          "option_2": "",
-          "option_3": "",
-          "option_4": "",
+          "option_1": "0",
+          "option_2": "1",
+          "option_3": "2",
+          "option_4": "3",
         },
         "answer": "",
         "rounds_of_answer": 0
@@ -571,8 +573,6 @@ var quiz_questions = {
 
  // Function to start the timer for get_ready_qns_state
  function start_get_ready_state_timer(){
-   console.log("Start progress bar animation");
-
    // Animate the progress bar loading
    setTimeout(function () {
         progress += increment;
@@ -617,10 +617,10 @@ var quiz_questions = {
    document.getElementById('answering_skipbt').addEventListener('click', skip_button_handler);
 
    // Code to handle option chosen event
-   document.getElementById('answering_option1').addEventListener('click', option1_handler);
-   document.getElementById('answering_option2').addEventListener('click', option2_handler);
-   document.getElementById('answering_option3').addEventListener('click', option3_handler);
-   document.getElementById('answering_option4').addEventListener('click', option4_handler);
+   document.getElementById('answering_option_1').addEventListener('click', option1_handler);
+   document.getElementById('answering_option_2').addEventListener('click', option2_handler);
+   document.getElementById('answering_option_3').addEventListener('click', option3_handler);
+   document.getElementById('answering_option_4').addEventListener('click', option4_handler);
    if(time_to_answer == -1) {
      // Timer has reached 0, clear the timeout
      clearInterval(timer);
@@ -680,6 +680,11 @@ function option1_handler(){
 
     // Update Player 1 answer_correct variable depending what player 1 has chosen
     if (quiz_questions.topics[topic_quiz][current_qns_count].answer === "option_1") {
+      // Display happy face beside the option selected by player 1
+      document.getElementById('answering_option1_correct_emoji').style.display = "inline";
+      document.getElementById('answering_option1_wrong_emoji').style.display = "none";
+      console.log("Displayed happy face beside option 1 for player 1");
+
       // Player 1 has chosen the correct answer, increment correct_answers by 1
       players.player1.answer_correct = true;
       console.log("Player 1 has selected the correct answer");
@@ -694,6 +699,11 @@ function option1_handler(){
       console.log("Player 1 total points = " + players.player1.total_pts);
     }
     else {
+      // Display unhappy face beside the option selected by the player
+      document.getElementById('answering_option1_correct_emoji').style.display = "none";
+      document.getElementById('answering_option1_wrong_emoji').style.display = "inline";
+      console.log("Displayed unhappy face beside option 1 for player 1");
+
       players.player1.answer_correct = false;
       console.log("Player 1 has chosen the incorrect answer");
 
@@ -706,16 +716,26 @@ function option1_handler(){
       console.log("Player 1 total points = " + players.player1.total_pts);
     }
 
-    // Update whose turn is it to answer now
-    decide_whose_turn_to_answer();
-    console.log("Switched to player 2 turn to answer");
+    // Set timeout of 1 second for player 1 after choosing option 1
+    var player1_option1_timeout = setTimeout(function(){
+      console.log("Setting 1 second timeout for player 1 choosing option 1");
 
-    // Refresh content for answering_qns_state
-    populate_answering_content_for_player2();
-    console.log("Populated content for player 2 turn's to answer");
+      // Set display of emojis to none
+      document.getElementById('answering_option1_correct_emoji').style.display = "none";
+      document.getElementById('answering_option1_wrong_emoji').style.display = "none";
+      console.log("Finished setting the emojis display to none after player 1 has answered");
 
-    // Refresh answering_qns_state timer for player 2
-    start_answering_timer();
+      // Update whose turn is it to answer now
+      decide_whose_turn_to_answer();
+      console.log("Switched to player 2 turn to answer");
+
+      // Refresh content for answering_qns_state
+      populate_answering_content_for_player2();
+      console.log("Populated content for player 2 turn's to answer");
+
+      // Refresh answering_qns_state timer for player 2
+      start_answering_timer();
+    }, 1000);
   }
   else if (players.player1.answering_now === false && players.player2.answering_now === true) {
     // Update player2 answer_chosen object attribute
@@ -724,6 +744,11 @@ function option1_handler(){
 
     // Update Player 2 answer_correct variable depending what player 2 has chosen
     if (quiz_questions.topics[topic_quiz][current_qns_count].answer === "option_1") {
+      // Display happy face beside the option selected by player 2
+      document.getElementById('answering_option1_correct_emoji').style.display = "inline";
+      document.getElementById('answering_option1_wrong_emoji').style.display = "none";
+      console.log("Displayed happy face beside option 1 for player 2");
+
       // Player 2 has chosen the correct answer, increment correct_answers by 1
       players.player2.answer_correct = true;
       console.log("Player 2 has chosen the correct answer");
@@ -738,6 +763,11 @@ function option1_handler(){
       console.log("Player 2 total points = " + players.player2.total_pts);
     }
     else {
+      // Display unhappy face beside the option selected by the player
+      document.getElementById('answering_option1_correct_emoji').style.display = "none";
+      document.getElementById('answering_option1_wrong_emoji').style.display = "inline";
+      console.log("Displayed unhappy face beside option 1 for player 2");
+
       players.player2.answer_correct = false;
       console.log("Player 2 has chosen the incorrect answer");
 
@@ -750,12 +780,22 @@ function option1_handler(){
       console.log("Player 2 total points = " + players.player2.total_pts);
     }
 
-    // Populate content for results page
-    populate_results();
-    console.log("Populated results for results page");
+    // Set timeout of 1 second for player 2 after choosing option 1
+    var player2_option1_timeout = setTimeout(function(){
+      console.log("Setting 1 second timeout for player 2 choosing option 1");
 
-    // Toggle state to result_qns_state
-    toggle_state('answering_qns_state', 'result_qns_state');
+      // Populate content for results page
+      populate_results();
+      console.log("Populated results for results page");
+
+      // Toggle state to result_qns_state
+      toggle_state('answering_qns_state', 'result_qns_state');
+
+      // Set display of emojis to none
+      document.getElementById('answering_option1_correct_emoji').style.display = "none";
+      document.getElementById('answering_option1_wrong_emoji').style.display = "none";
+      console.log("Finished setting emojis display to none after player 2 has answered");
+    }, 1000);
   }
 }
 
@@ -769,6 +809,12 @@ function option2_handler(){
 
     // Update Player 1 answer_correct variable depending what player 1 has chosen
     if (quiz_questions.topics[topic_quiz][current_qns_count].answer === "option_2") {
+      // Display happy face beside the option selected by the player
+      document.getElementById('answering_option2_correct_emoji').style.display = "inline";
+      document.getElementById('answering_option2_wrong_emoji').style.display = "none";
+      console.log("Displayed happy face beside option 2 for player 1");
+
+      // Player 1 chose the correct option - option 2
       players.player1.answer_correct = true;
       console.log("Player 1 has selected the correct answer");
       players.player1.correct_answers += 1;
@@ -782,6 +828,11 @@ function option2_handler(){
       console.log("Player 1 total points = " + players.player1.total_pts);
     }
     else {
+      // Display unhappy face beside the option selected by the player
+      document.getElementById('answering_option2_correct_emoji').style.display = "none";
+      document.getElementById('answering_option2_wrong_emoji').style.display = "inline";
+      console.log("Displayed unhappy face beside option 2 for player 1");
+
       players.player1.answer_correct = false;
       console.log("Player 1 has chosen the incorrect answer");
 
@@ -794,16 +845,24 @@ function option2_handler(){
       console.log("Player 1 total points = " + players.player1.total_pts);
     }
 
-    // Update whose turn is it to answer now
-    decide_whose_turn_to_answer();
-    console.log("Switched to player 2 turn to answer");
+    // Set 1 second timeout for player 1 choosing option 2
+    var player1_option2_timeout = setTimeout(function(){
+      // Set display of emojis to none
+      document.getElementById('answering_option2_correct_emoji').style.display = "none";
+      document.getElementById('answering_option2_wrong_emoji').style.display = "none";
+      console.log("Finished setting emojis display to none after player 1 has answered");
 
-    // Refresh content for answering_qns_state
-    populate_answering_content_for_player2();
-    console.log("Populated content for player 2 turn's to answer");
+      // Update whose turn is it to answer now
+      decide_whose_turn_to_answer();
+      console.log("Switched to player 2 turn to answer");
 
-    // Refresh answering_qns_state timer for player 2
-    start_answering_timer();
+      // Refresh content for answering_qns_state
+      populate_answering_content_for_player2();
+      console.log("Populated content for player 2 turn's to answer");
+
+      // Refresh answering_qns_state timer for player 2
+      start_answering_timer();
+    }, 1000);
   }
   else if (players.player1.answering_now === false && players.player2.answering_now === true) {
     // Update player2 answer_chosen object attribute
@@ -812,6 +871,11 @@ function option2_handler(){
 
     // Update Player 2 answer_correct variable depending what player 2 has chosen
     if (quiz_questions.topics[topic_quiz][current_qns_count].answer === "option_2") {
+      // Display happy face beside the option selected by the player
+      document.getElementById('answering_option2_correct_emoji').style.display = "inline";
+      document.getElementById('answering_option2_wrong_emoji').style.display = "none";
+      console.log("Displayed happy face beside option 2 for player 2");
+
       players.player2.answer_correct = true;
       console.log("Player 2 has chosen the correct answer");
       players.player2.correct_answers += 1;
@@ -825,6 +889,11 @@ function option2_handler(){
       console.log("Player 2 total points = " + players.player2.total_pts);
     }
     else {
+      // Display unhappy face beside the option selected by the player
+      document.getElementById('answering_option2_correct_emoji').style.display = "none";
+      document.getElementById('answering_option2_wrong_emoji').style.display = "inline";
+      console.log("Displayed unhappy face beside option 2 for player 2");
+
       players.player2.answer_correct = false;
       console.log("Player 2 has chosen the incorrect answer");
 
@@ -837,12 +906,20 @@ function option2_handler(){
       console.log("Player 2 total points = " + players.player2.total_pts);
     }
 
-    // Populate content for results page
-    populate_results();
-    console.log("Populated results for results page");
+    // Set 1 second timeout for player 2 choosing option 2
+    var player2_option2_timeout = setTimeout(function(){
+      // Populate content for results page
+      populate_results();
+      console.log("Populated results for results page");
 
-    // Toggle state to result_qns_state
-    toggle_state('answering_qns_state', 'result_qns_state');
+      // Toggle state to result_qns_state
+      toggle_state('answering_qns_state', 'result_qns_state');
+
+      // Set display of emojis to none
+      document.getElementById('answering_option2_correct_emoji').style.display = "none";
+      document.getElementById('answering_option2_wrong_emoji').style.display = "none";
+      console.log("Finished setting emojis display to none after player 2 has answered");
+    }, 1000);
   }
 }
 
@@ -856,6 +933,12 @@ function option3_handler(){
 
     // Update Player 1 answer_correct variable depending what player 1 has chosen
     if (quiz_questions.topics[topic_quiz][current_qns_count].answer === "option_3") {
+      // Display happy face beside the option selected by the player
+      document.getElementById('answering_option3_correct_emoji').style.display = "inline";
+      document.getElementById('answering_option3_wrong_emoji').style.display = "none";
+      console.log("Displayed happy face beside option 3 for player 1");
+
+      // Player 1 chose the right answer
       players.player1.answer_correct = true;
       console.log("Player 1 has selected the correct answer");
       players.player1.correct_answers += 1;
@@ -869,6 +952,12 @@ function option3_handler(){
       console.log("Player 1 total points = " + players.player1.total_pts);
     }
     else {
+      // Display unhappy face beside the option selected by the player
+      document.getElementById('answering_option3_correct_emoji').style.display = "none";
+      document.getElementById('answering_option3_wrong_emoji').style.display = "inline";
+      console.log("Displayed unhappy face beside option 3 for player 1");
+
+      // Player 1 chose the wrong answer
       players.player1.answer_correct = false;
       console.log("Player 1 has chosen the incorrect answer");
 
@@ -881,16 +970,24 @@ function option3_handler(){
       console.log("Player 1 total points = " + players.player1.total_pts);
     }
 
-    // Update whose turn is it to answer now
-    decide_whose_turn_to_answer();
-    console.log("Switched to player 2 turn to answer");
+    // Set 1 second timeout for player 1 choosing option 3
+    var player1_option3_timeout = setTimeout(function(){
+      // Set display of emojis to none
+      document.getElementById('answering_option3_correct_emoji').style.display = "none";
+      document.getElementById('answering_option3_wrong_emoji').style.display = "none";
+      console.log("Finished setting emojis display to none after player 1 has answered");
 
-    // Refresh content for answering_qns_state
-    populate_answering_content_for_player2();
-    console.log("Populated content for player 2 turn's to answer");
+      // Update whose turn is it to answer now
+      decide_whose_turn_to_answer();
+      console.log("Switched to player 2 turn to answer");
 
-    // Refresh answering_qns_state timer for player 2
-    start_answering_timer();
+      // Refresh content for answering_qns_state
+      populate_answering_content_for_player2();
+      console.log("Populated content for player 2 turn's to answer");
+
+      // Refresh answering_qns_state timer for player 2
+      start_answering_timer();
+    }, 1000);
   }
   else if (players.player1.answering_now === false && players.player2.answering_now === true) {
     // Update player2 answer_chosen object attribute
@@ -899,6 +996,12 @@ function option3_handler(){
 
     // Update Player 2 answer_correct variable depending what player 2 has chosen
     if (quiz_questions.topics[topic_quiz][current_qns_count].answer === "option_3") {
+      // Display happy face beside the option selected by the player
+      document.getElementById('answering_option3_correct_emoji').style.display = "inline";
+      document.getElementById('answering_option3_wrong_emoji').style.display = "none";
+      console.log("Displayed happy face beside option 3 for player 2");
+
+      // Player 2 chose the right answer
       players.player2.answer_correct = true;
       console.log("Player 2 has chosen the correct answer");
       players.player2.correct_answers += 1;
@@ -912,6 +1015,12 @@ function option3_handler(){
       console.log("Player 2 total points = " + players.player2.total_pts);
     }
     else {
+      // Display unhappy face beside the option selected by the player
+      document.getElementById('answering_option3_correct_emoji').style.display = "none";
+      document.getElementById('answering_option3_wrong_emoji').style.display = "inline";
+      console.log("Displayed unhappy face beside option 3 for player 2");
+
+      // Player 2 chose the wrong answer
       players.player2.answer_correct = false;
       console.log("Player 2 has chosen the incorrect answer");
 
@@ -924,12 +1033,20 @@ function option3_handler(){
       console.log("Player 2 total points = " + players.player2.total_pts);
     }
 
-    // Populate content for results page
-    populate_results();
-    console.log("Populated results for results page");
+    // Set 1 second timeout for player 2 choosing option 3
+    var player2_option3_timeout = setTimeout(function(){
+      // Populate content for results page
+      populate_results();
+      console.log("Populated results for results page");
 
-    // Toggle state to result_qns_state
-    toggle_state('answering_qns_state', 'result_qns_state');
+      // Toggle state to result_qns_state
+      toggle_state('answering_qns_state', 'result_qns_state');
+
+      // Set display of emojis to none
+      document.getElementById('answering_option3_correct_emoji').style.display = "none";
+      document.getElementById('answering_option3_wrong_emoji').style.display = "none";
+      console.log("Finished setting emojis display to none after player 2 has answered");
+    }, 1000);
   }
 }
 
@@ -943,6 +1060,12 @@ function option4_handler(){
 
     // Update Player 1 answer_correct variable depending what player 1 has chosen
     if (quiz_questions.topics[topic_quiz][current_qns_count].answer === "option_4") {
+      // Display happy face beside the option selected by the player
+      document.getElementById('answering_option4_correct_emoji').style.display = "inline";
+      document.getElementById('answering_option4_wrong_emoji').style.display = "none";
+      console.log("Displayed happy face beside option 4 for player 1");
+
+      // Player 1 chose the right answer
       players.player1.answer_correct = true;
       console.log("Player 1 has selected the correct answer");
       players.player1.correct_answers += 1;
@@ -956,6 +1079,12 @@ function option4_handler(){
       console.log("Player 1 total points = " + players.player1.total_pts);
     }
     else {
+      // Display unhappy face beside the option selected by the player
+      document.getElementById('answering_option4_correct_emoji').style.display = "none";
+      document.getElementById('answering_option4_wrong_emoji').style.display = "inline";
+      console.log("Displayed unhappy face beside option 4 for player 1");
+
+      // Player 1 chose the wrong answer
       players.player1.answer_correct = false;
       console.log("Player 1 has chosen the incorrect answer");
 
@@ -968,16 +1097,24 @@ function option4_handler(){
       console.log("Player 1 total points = " + players.player1.total_pts);
     }
 
-    // Update whose turn is it to answer now
-    decide_whose_turn_to_answer();
-    console.log("Switched to player 2 turn to answer");
+    // Set 1 second timeout for player 1 choosing option 4
+    var player1_option4_timeout = setTimeout(function(){
+      // Set display of emojis to none
+      document.getElementById('answering_option4_correct_emoji').style.display = "none";
+      document.getElementById('answering_option4_wrong_emoji').style.display = "none";
+      console.log("Finished setting emojis display to none after player 1 has answered");
 
-    // Refresh content for answering_qns_state
-    populate_answering_content_for_player2();
-    console.log("Populated content for player 2 turn's to answer");
+      // Update whose turn is it to answer now
+      decide_whose_turn_to_answer();
+      console.log("Switched to player 2 turn to answer");
 
-    // Refresh answering_qns_state timer for player 2
-    start_answering_timer();
+      // Refresh content for answering_qns_state
+      populate_answering_content_for_player2();
+      console.log("Populated content for player 2 turn's to answer");
+
+      // Refresh answering_qns_state timer for player 2
+      start_answering_timer();
+    }, 1000);
   }
   else if (players.player1.answering_now === false && players.player2.answering_now === true) {
     // Update player2 answer_chosen object attribute
@@ -986,6 +1123,12 @@ function option4_handler(){
 
     // Update Player 2 answer_correct variable depending what player 2 has chosen
     if (quiz_questions.topics[topic_quiz][current_qns_count].answer === "option_4") {
+      // Display happy face beside the option selected by the player
+      document.getElementById('answering_option4_correct_emoji').style.display = "inline";
+      document.getElementById('answering_option4_wrong_emoji').style.display = "none";
+      console.log("Displayed happy face beside option 4 for player 2");
+
+      // Player 2 chose the right answer
       players.player2.answer_correct = true;
       console.log("Player 2 has chosen the correct answer");
       players.player2.correct_answers += 1;
@@ -999,6 +1142,12 @@ function option4_handler(){
       console.log("Player 2 total points = " + players.player2.total_pts);
     }
     else {
+      // Display unhappy face beside the option selected by the player
+      document.getElementById('answering_option4_correct_emoji').style.display = "none";
+      document.getElementById('answering_option4_wrong_emoji').style.display = "inline";
+      console.log("Displayed unhappy face beside option 4 for player 2");
+
+      // Player 2 chose the wrong answer
       players.player2.answer_correct = false;
       console.log("Player 2 has chosen the incorrect answer");
 
@@ -1011,12 +1160,20 @@ function option4_handler(){
       console.log("Player 2 total points = " + players.player2.total_pts);
     }
 
-    // Populate content for results page
-    populate_results();
-    console.log("Populated results for results page");
+    // Set 1 second timeout for player 2 after choosing option 4
+    var player2_option4_timeout = setTimeout(function(){
+      // Populate content for results page
+      populate_results();
+      console.log("Populated results for results page");
 
-    // Toggle state to result_qns_state
-    toggle_state('answering_qns_state', 'result_qns_state');
+      // Toggle state to result_qns_state
+      toggle_state('answering_qns_state', 'result_qns_state');
+
+      // Set display of emojis to none
+      document.getElementById('answering_option4_correct_emoji').style.display = "none";
+      document.getElementById('answering_option4_wrong_emoji').style.display = "none";
+      console.log("Finished setting emojis display to none after player 2 has answered");
+    }, 1000);
   }
 }
 
@@ -1359,6 +1516,10 @@ function populate_gameover(){
     document.getElementById('podium_1st_qns_correct').innerHTML = players.player2.correct_answers + " out of 10";
   }
 }
+
+// Function to start podium animation
+// function start_podium_animation(){
+// }
 
 // Function to handle click event for next button in result_qns_state - populate content for scoreboard
 function results_nextbt_handler(){
