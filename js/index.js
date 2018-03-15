@@ -172,7 +172,7 @@ var quiz_questions = {
       {
         "question_number": 1,
         "title":"HTML tag to define content aside from main content",
-        "image": "",
+        "image": "img/html/qns_1_image.jpg",
         "options": {
           "option_1": "legend",
           "option_2": "body",
@@ -181,12 +181,12 @@ var quiz_questions = {
         },
         "answer": "option_4",
         "rounds_of_answer": 0,
-        "reference_link": ""
+        "reference_link": "https://www.w3schools.com/tags/tag_aside.asp"
       },
       {
         "question_number": 2,
         "title":"HTML element to group body content in a table",
-        "image": "",
+        "image": "img/html/qns_2_image.png",
         "options": {
           "option_1": "tbody",
           "option_2": "tfoot",
@@ -195,12 +195,12 @@ var quiz_questions = {
         },
         "answer": "option_1",
         "rounds_of_answer": 0,
-        "reference_link": ""
+        "reference_link": "https://www.w3schools.com/tags/tag_tbody.asp"
       },
       {
         "question_number": 3,
         "title":"Alternative tag to make text bold",
-        "image": "",
+        "image": "img/html/qns_3_image.png",
         "options": {
           "option_1": "bold",
           "option_2": "double",
@@ -209,12 +209,12 @@ var quiz_questions = {
         },
         "answer": "option_3",
         "rounds_of_answer": 0,
-        "reference_link": ""
+        "reference_link": "https://www.w3schools.com/tags/tag_b.asp"
       },
       {
         "question_number": 4,
         "title":"Types of elements in a HTML form",
-        "image": "",
+        "image": "img/html/qns_4_image.png",
         "options": {
           "option_1": "Input",
           "option_2": "Text",
@@ -223,12 +223,12 @@ var quiz_questions = {
         },
         "answer": "option_4",
         "rounds_of_answer": 0,
-        "reference_link": ""
+        "reference_link": "https://www.w3schools.com/html/html_form_elements.asp"
       },
       {
         "question_number": 5,
         "title":"Fundamental tag in a HTML block",
-        "image": "",
+        "image": "img/html/qns_5_image.png",
         "options": {
           "option_1": "!DOCTYPE",
           "option_2": "HTML",
@@ -237,12 +237,12 @@ var quiz_questions = {
         },
         "answer": "option_1",
         "rounds_of_answer": 0,
-        "reference_link": ""
+        "reference_link": "https://www.w3schools.com/tags/tag_doctype.asp"
       },
       {
         "question_number": 6,
         "title":"Define special style in HTML, use __?",
-        "image": "",
+        "image": "img/html/qns_6_image.png",
         "options": {
           "option_1": "class",
           "option_2": "id",
@@ -251,12 +251,12 @@ var quiz_questions = {
         },
         "answer": "option_2",
         "rounds_of_answer": 0,
-        "reference_link": ""
+        "reference_link": "https://www.w3schools.com/tags/att_id.asp"
       },
       {
         "question_number": 7,
         "title":"Element 'em' defines ___ text",
-        "image": "",
+        "image": "img/html/qns_7_image.png",
         "options": {
           "option_1": "Normal",
           "option_2": "Strong",
@@ -265,12 +265,12 @@ var quiz_questions = {
         },
         "answer": "option_4",
         "rounds_of_answer": 0,
-        "reference_link": ""
+        "reference_link": "https://www.w3schools.com/tags/tag_em.asp"
       },
       {
         "question_number": 8,
         "title":"No. of attributes required for div element",
-        "image": "",
+        "image": "img/html/qns_8_image.png",
         "options": {
           "option_1": "0",
           "option_2": "1",
@@ -279,12 +279,12 @@ var quiz_questions = {
         },
         "answer": "option_1",
         "rounds_of_answer": 0,
-        "reference_link": ""
+        "reference_link": "https://www.w3schools.com/tags/tag_div.asp"
       },
       {
         "question_number": 9,
-        "title":"Article defined with ___ tag",
-        "image": "",
+        "title":"Article is defined with ___ tag",
+        "image": "img/html/qns_9_image.png",
         "options": {
           "option_1": "title",
           "option_2": "header",
@@ -293,28 +293,28 @@ var quiz_questions = {
         },
         "answer": "option_4",
         "rounds_of_answer": 0,
-        "reference_link": ""
+        "reference_link": "https://www.w3schools.com/tags/tag_article.asp"
       },
       {
         "question_number": 10,
-        "title":"Data type of an array is",
-        "image": "",
+        "title":"Comments in HTML look like?",
+        "image": "img/html/qns_10_image.png",
         "options": {
-          "option_1": "Char",
-          "option_2": "int",
-          "option_3": "object",
-          "option_4": "NaN",
+          "option_1": "//",
+          "option_2": "/* */",
+          "option_3": "<!-- -->",
+          "option_4": "None",
         },
         "answer": "option_3",
         "rounds_of_answer": 0,
-        "reference_link": ""
+        "reference_link": "https://www.w3schools.com/tags/tag_comment.asp"
       },
     ],
     "javaScript": [
       {
         "question_number": 1,
         "title":"Built-in method to assess each array element",
-        "image": "",
+        "image": "img/javascript/qns_1_image.png",
         "options": {
           "option_1": "while()",
           "option_2": "for()",
@@ -323,12 +323,12 @@ var quiz_questions = {
         },
         "answer": "option_3",
         "rounds_of_answer": 0,
-        "reference_link": ""
+        "reference_link": "https://www.w3schools.com/jsref/jsref_forEach.asp"
       },
       {
         "question_number": 2,
         "title":"Built-in method to convert to string",
-        "image": "",
+        "image": "img/javascript/qns_2_image.png",
         "options": {
           "option_1": "toValue()",
           "option_2": "toString()",
@@ -337,12 +337,12 @@ var quiz_questions = {
         },
         "answer": "option_2",
         "rounds_of_answer": 0,
-        "reference_link": ""
+        "reference_link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString"
       },
       {
         "question_number": 3,
         "title":"Funcion to combine 2 strings & return new string",
-        "image": "",
+        "image": "img/javascript/qns_3_image.png",
         "options": {
           "option_1": "add()",
           "option_2": "merge()",
@@ -351,12 +351,12 @@ var quiz_questions = {
         },
         "answer": "option_3",
         "rounds_of_answer": 0,
-        "reference_link": ""
+        "reference_link": "https://www.w3schools.com/jsref/jsref_concat_string.asp"
       },
       {
         "question_number": 4,
         "title":"Function to extract a section of a string",
-        "image": "",
+        "image": "img/javascript/qns_4_image.png",
         "options": {
           "option_1": "split()",
           "option_2": "slice()",
@@ -365,12 +365,12 @@ var quiz_questions = {
         },
         "answer": "option_2",
         "rounds_of_answer": 0,
-        "reference_link": ""
+        "reference_link": "https://www.w3schools.com/jsref/jsref_slice_string.asp"
       },
       {
         "question_number": 5,
         "title":"Method to remove last array element",
-        "image": "",
+        "image": "img/javascript/qns_5_image.png",
         "options": {
           "option_1": "push()",
           "option_2": "pop()",
@@ -379,12 +379,12 @@ var quiz_questions = {
         },
         "answer": "option_2",
         "rounds_of_answer": 0,
-        "reference_link": ""
+        "reference_link": "https://www.w3schools.com/jsref/jsref_pop.asp"
       },
       {
         "question_number": 6,
         "title":"Method to add new elements to start of array",
-        "image": "",
+        "image": "img/javascript/qns_6_image.png",
         "options": {
           "option_1": "shift()",
           "option_2": "unshift()",
@@ -393,12 +393,12 @@ var quiz_questions = {
         },
         "answer": "option_2",
         "rounds_of_answer": 0,
-        "reference_link": ""
+        "reference_link": "https://www.w3schools.com/jsref/jsref_unshift.asp"
       },
       {
         "question_number": 7,
         "title":"Can you access Cookie using javascript?",
-        "image": "",
+        "image": "img/javascript/qns_7_image.png",
         "options": {
           "option_1": "True",
           "option_2": "False",
@@ -407,12 +407,12 @@ var quiz_questions = {
         },
         "answer": "option_1",
         "rounds_of_answer": 0,
-        "reference_link": ""
+        "reference_link": "https://www.w3schools.com/js/js_cookies.asp"
       },
       {
         "question_number": 8,
         "title":"Which event fires whenever a control loses focus?",
-        "image": "",
+        "image": "img/javascript/qns_8_image.png",
         "options": {
           "option_1": "onclick",
           "option_2": "onmove",
@@ -421,12 +421,12 @@ var quiz_questions = {
         },
         "answer": "option_3",
         "rounds_of_answer": 0,
-        "reference_link": ""
+        "reference_link": "https://www.w3schools.com/jsref/event_onblur.asp"
       },
       {
         "question_number": 9,
         "title":"Math.random() returns ___",
-        "image": "",
+        "image": "img/javascript/qns_9_image.png",
         "options": {
           "option_1": "Values 0-1",
           "option_2": "Values 0-1000",
@@ -435,12 +435,12 @@ var quiz_questions = {
         },
         "answer": "option_1",
         "rounds_of_answer": 0,
-        "reference_link": ""
+        "reference_link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random"
       },
       {
         "question_number": 10,
         "title":"What is the result of a?",
-        "image": "img/javascript/qns_10_image.png",
+        "image": "img/javascript/qns_10_image.PNG",
         "options": {
           "option_1": "0",
           "option_2": "1",
@@ -745,7 +745,7 @@ var quiz_questions = {
 // Function to populate content for the modal
 function populate_modal(){
   console.log("Populating content for the modal");
-  
+
   // To display the question in the modal
   document.getElementById('question_title').innerHTML = quiz_questions.topics[topic_quiz][current_qns_count].title;
 
