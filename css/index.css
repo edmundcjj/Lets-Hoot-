@@ -505,6 +505,9 @@ h1{
   width: 40px;
   margin-left: .5rem;
 }
+#modal_correct_answer{
+  text-align: center;
+}
 
 
 /* ---------------------------Media Queries---------------------------------- */

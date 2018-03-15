@@ -127,10 +127,10 @@
           </span>
         </h2>
         <h5>
-          <li>Players will take turns to answer the same question</li>
+          <li>Players will take turns to answer each question</li>
           <li>Players can select options to answer the question or choose to skip</li>
-          <li>Players will earn points based on how they fast an answer is selected</li>
-          <li>Players are not allowed to answer the quiz questions together</li>
+          <li>Players will earn 50 points for every correct answer selected</li>
+          <li>Players are not allowed to answer each question together</li>
           <li>When one player is answering, the other player is not allowed to peep</li>
           <li>Discussion can only take place at the end of each question</li>
         </h5>
@@ -313,7 +313,7 @@
           <!-- Display player 1 stats -->
           <div class="d-flex align-items-center justify-content-center flex-column result_stats">
             <h5 id="result_answer_p1_outcome">INCORRECT</h5>
-            <button type="button" name="button" class="btn btn-primary" id="result_p1_reveal">REVEAL</button>
+            <button type="button" name="button" class="btn btn-primary" id="result_p1_reveal" data-toggle="modal" data-target="#results_modal">REVEAL</button>
             <!-- Create bootstrap modal for correct answer if player chooses incorrect answer -->
             <br><br>
             <h5 id="result_player1_placing">2ND PLACE</h5>
@@ -337,7 +337,7 @@
           <!-- Display player 2 stats -->
           <div class="d-flex align-items-center justify-content-center flex-column result_stats">
             <h5 id="result_answer_p2_outcome">CORRECT</h5>
-            <button type="button" name="button" class="btn btn-primary" id="result_p2_reveal">REVEAL</button>
+            <button type="button" name="button" class="btn btn-primary" id="result_p2_reveal" data-toggle="modal" data-target="#results_modal">REVEAL</button>
             <!-- Create bootstrap modal for correct answer if player chooses incorrect answer -->
             <br><br>
             <h5 id="result_player2_placing">1ST PLACE</h5>
@@ -349,6 +349,33 @@
           <div class="d-flex align-items-center justify-content-center flex-column result_p2_pts">
             <h5 id="result_player2_pts">50 pts</h5>
           </div>
+      </div>
+
+      <!-- The Modal to display the correct option for the current question-->
+      <!-- Purpose of the modal is to facilitate discussion between the 2 players -->
+      <div class="modal fade" id="results_modal">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h2 class="modal-title">What is the correct answer?</h2>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+              <b><h2 id="modal_correct_answer"></h2></b>
+              <h4 id="modal_answer_reference"><a href="" target="_blank" id="modal_answer_reference_link">Click here for more information</a></h4>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+
+          </div>
+        </div>
       </div>
     </div>
 
