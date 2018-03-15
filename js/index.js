@@ -302,7 +302,7 @@ var quiz_questions = {
         "options": {
           "option_1": "//",
           "option_2": "/* */",
-          "option_3": "<!-- -->",
+          "option_3": "!-- --",
           "option_4": "None",
         },
         "answer": "option_3",
@@ -310,7 +310,7 @@ var quiz_questions = {
         "reference_link": "https://www.w3schools.com/tags/tag_comment.asp"
       },
     ],
-    "javaScript": [
+    "javascript": [
       {
         "question_number": 1,
         "title":"Built-in method to assess each array element",
