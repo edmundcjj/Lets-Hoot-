@@ -562,18 +562,6 @@ No media query since this is the default in Bootstrap */
   .btn{
     font-size: 2rem;
   }
-  /* .answering_option1{
-    font-size: 3rem;
-  }
-  .answering_option2{
-    font-size: 3rem;
-  }
-  .answering_option3{
-    font-size: 3rem;
-  }
-  .answering_option4{
-    font-size: 3rem;
-  } */
   #answering_option1{
     font-size: 3rem;
   }
@@ -695,18 +683,6 @@ No media query since this is the default in Bootstrap */
   .btn{
     font-size: 2.5rem;
   }
-  /* .answering_option1{
-    font-size: 4rem;
-  }
-  .answering_option2{
-    font-size: 4rem;
-  }
-  .answering_option3{
-    font-size: 4rem;
-  }
-  .answering_option4{
-    font-size: 4rem;
-  } */
   #answering_option1{
     font-size: 4rem;
   }
