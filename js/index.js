@@ -745,6 +745,10 @@ var quiz_questions = {
 // Function to populate content for the modal
 function populate_modal(){
   console.log("Populating content for the modal");
+  
+  // To display the question in the modal
+  document.getElementById('question_title').innerHTML = quiz_questions.topics[topic_quiz][current_qns_count].title;
+
   // To search for the value of the correct option for the current question and display it in the modal
   var current_answer = quiz_questions.topics[topic_quiz][current_qns_count].answer;
   console.log("Current question answer is " + current_answer);
