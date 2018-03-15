@@ -12,6 +12,36 @@ h1{
   margin: 0;
 }
 
+/* ---------------------------Text Animation--------------------------------- */
+.ml11 {
+  font-weight: 900;
+  font-size: 3.5em;
+}
+.ml11 .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.1em;
+  padding-right: 0.05em;
+  padding-bottom: 0.15em;
+}
+.ml11 .line {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 3px;
+  background-color: #fff;
+  transform-origin: 0 50%;
+}
+.ml11 .line1 {
+  top: 0;
+  left: 0;
+}
+.ml11 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+
 /* ---------------------------Classes---------------------------------------- */
 .game_header{
   background-color: #F4653F;
@@ -141,57 +171,35 @@ h1{
 }
 .answering_option1{
   background-color: #E21B3C;
-  width: 100vh;
+  width: 93vh;
   margin-right: .25rem;
-  /* font-size: 1.7rem; */
-}
-.answering_option1:active{
-  box-shadow: 0 5px black;
-  transform: translateY(4px);
 }
 .answering_option2{
   background-color: #1368CE;
-  width: 100vh;
+  width: 93vh;
   margin-left: .25rem;
-  /* font-size: 1.7rem; */
-}
-.answering_option2:active{
-  box-shadow: 0 5px black;
-  transform: translateY(4px);
 }
 .answering_option3{
   background-color: #D89E00;
-  /* color: white; */
-  width: 100vh;
+  width: 93vh;
   margin-right: .25rem;
-  /* font-size: 1.7rem; */
-}
-.answering_option3:active{
-  box-shadow: 0 5px black;
-  transform: translateY(-4px);
 }
 .answering_option4{
   background-color: #298F0D;
-  /* color: white; */
-  width: 100vh;
+  width: 93vh;
   margin-left: .25rem;
-  /* font-size: 1.7rem; */
-}
-.answering_option4:active{
-  box-shadow: 0 5px black;
-  transform: translateY(-4px);
 }
 .game_answering_options_1 > .answering_option1:hover{
-  background-color: #f16f5c;
+  transform: scale(1.1);
 }
 .game_answering_options_1 > .answering_option2:hover{
-  background-color: #388ced;
+  transform: scale(1.1);
 }
 .game_answering_options_2 > .answering_option3:hover{
-  background-color: #EBC14E;
+  transform: scale(1.1);
 }
 .game_answering_options_2 > .answering_option4:hover{
-  background-color: #62C447;
+  transform: scale(1.1);
 }
 .game_result_header{
   height: 10vh;
@@ -420,56 +428,48 @@ h1{
   font-size: 1.7rem;
 }
 #answering_option1_correct_emoji{
-  /* visibility: hidden; */
   display: none;
   height: 40px;
   width: 40px;
   margin-left: .5rem;
 }
 #answering_option1_wrong_emoji{
-  /* visibility: visible; */
   display: none;
   height: 40px;
   width: 40px;
   margin-left: .5rem;
 }
 #answering_option2_correct_emoji{
-  /* visibility: hidden; */
   display: none;
   height: 40px;
   width: 40px;
   margin-left: .5rem;
 }
 #answering_option2_wrong_emoji{
-  /* visibility: visible; */
   display: none;
   height: 40px;
   width: 40px;
   margin-left: .5rem;
 }
 #answering_option3_correct_emoji{
-  /* visibility: hidden; */
   display: none;
   height: 40px;
   width: 40px;
   margin-left: .5rem;
 }
 #answering_option3_wrong_emoji{
-  /* visibility: visible; */
   display: none;
   height: 40px;
   width: 40px;
   margin-left: .5rem;
 }
 #answering_option4_correct_emoji{
-  /* visibility: hidden; */
   display: none;
   height: 40px;
   width: 40px;
   margin-left: .5rem;
 }
 #answering_option4_wrong_emoji{
-  /* visibility: visible; */
   display: none;
   height: 40px;
   width: 40px;
@@ -807,6 +807,12 @@ No media query since this is the default in Bootstrap */
   }
   .game_answering_header > h5{
     font-size: 3rem;
+  }
+  .answering_option1{
+    margin-left: 3.2rem;
+  }
+  .answering_option3{
+    margin-left: 3.2rem;
   }
   .game_result_header > h5{
     font-size: 3rem;
