@@ -156,7 +156,7 @@ var quiz_questions = {
       {
         "question_number": 10,
         "title":"HTML tag to make unordered list?",
-        "image": "img/random/qns_10_image.PNG",
+        "image": "img/random/qns_10_image.png",
         "options": {
           "option_1": "li",
           "option_2": "ul",
