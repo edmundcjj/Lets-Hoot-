@@ -38,7 +38,8 @@ var quiz_questions = {
           "option_4": "Header",
         },
         "answer": "option_2",
-        "rounds_of_answer": 0
+        "rounds_of_answer": 0,
+        "reference_link": "https://www.w3schools.com/html/html_headings.asp"
       },
       {
         "question_number": 2,
@@ -51,7 +52,8 @@ var quiz_questions = {
           "option_4": "br",
         },
         "answer": "option_1",
-        "rounds_of_answer": 0
+        "rounds_of_answer": 0,
+        "reference_link": "https://www.w3schools.com/html/html_formatting.asp"
       },
       {
         "question_number": 3,
@@ -64,7 +66,8 @@ var quiz_questions = {
           "option_4": "padding",
         },
         "answer": "option_3",
-        "rounds_of_answer": 0
+        "rounds_of_answer": 0,
+        "reference_link": "https://www.w3schools.com/html/html_formatting.asp"
       },
       {
         "question_number": 4,
@@ -77,7 +80,8 @@ var quiz_questions = {
           "option_4": "Cascading",
         },
         "answer": "option_4",
-        "rounds_of_answer": 0
+        "rounds_of_answer": 0,
+        "reference_link": "https://www.w3schools.com/css/css_intro.asp"
       },
       {
         "question_number": 5,
@@ -90,7 +94,8 @@ var quiz_questions = {
           "option_4": "selection",
         },
         "answer": "option_1",
-        "rounds_of_answer": 0
+        "rounds_of_answer": 0,
+        "reference_link": "https://www.w3schools.com/tags/tag_select.asp"
       },
       {
         "question_number": 6,
@@ -103,7 +108,8 @@ var quiz_questions = {
           "option_4": "ol",
         },
         "answer": "option_3",
-        "rounds_of_answer": 0
+        "rounds_of_answer": 0,
+        "reference_link": "https://www.w3schools.com/tags/tag_select.asp"
       },
       {
         "question_number": 7,
@@ -116,7 +122,8 @@ var quiz_questions = {
           "option_4": "/",
         },
         "answer": "option_2",
-        "rounds_of_answer": 0
+        "rounds_of_answer": 0,
+        "reference_link": "https://css-tricks.com/snippets/css/comments-in-css/"
       },
       {
         "question_number": 8,
@@ -129,7 +136,8 @@ var quiz_questions = {
           "option_4": "image",
         },
         "answer": "option_2",
-        "rounds_of_answer": 0
+        "rounds_of_answer": 0,
+        "reference_link": "https://www.w3schools.com/css/css_text.asp"
       },
       {
         "question_number": 9,
@@ -142,7 +150,8 @@ var quiz_questions = {
           "option_4": "margin",
         },
         "answer": "option_1",
-        "rounds_of_answer": 0
+        "rounds_of_answer": 0,
+        "reference_link": "https://www.w3schools.com/css/css_margin.asp"
       },
       {
         "question_number": 10,
@@ -155,7 +164,8 @@ var quiz_questions = {
           "option_4": "select",
         },
         "answer": "option_2",
-        "rounds_of_answer": 0
+        "rounds_of_answer": 0,
+        "reference_link": "https://www.w3schools.com/tags/tag_ul.asp"
       },
     ],
     "html": [
@@ -170,7 +180,8 @@ var quiz_questions = {
           "option_4": "aside",
         },
         "answer": "option_4",
-        "rounds_of_answer": 0
+        "rounds_of_answer": 0,
+        "reference_link": ""
       },
       {
         "question_number": 2,
@@ -183,7 +194,8 @@ var quiz_questions = {
           "option_4": "theader",
         },
         "answer": "option_1",
-        "rounds_of_answer": 0
+        "rounds_of_answer": 0,
+        "reference_link": ""
       },
       {
         "question_number": 3,
@@ -196,7 +208,8 @@ var quiz_questions = {
           "option_4": "dark",
         },
         "answer": "option_3",
-        "rounds_of_answer": 0
+        "rounds_of_answer": 0,
+        "reference_link": ""
       },
       {
         "question_number": 4,
@@ -209,7 +222,8 @@ var quiz_questions = {
           "option_4": "ALL",
         },
         "answer": "option_4",
-        "rounds_of_answer": 0
+        "rounds_of_answer": 0,
+        "reference_link": ""
       },
       {
         "question_number": 5,
@@ -222,7 +236,8 @@ var quiz_questions = {
           "option_4": "P",
         },
         "answer": "option_1",
-        "rounds_of_answer": 0
+        "rounds_of_answer": 0,
+        "reference_link": ""
       },
       {
         "question_number": 6,
@@ -235,7 +250,8 @@ var quiz_questions = {
           "option_4": "tr",
         },
         "answer": "option_2",
-        "rounds_of_answer": 0
+        "rounds_of_answer": 0,
+        "reference_link": ""
       },
       {
         "question_number": 7,
@@ -248,7 +264,8 @@ var quiz_questions = {
           "option_4": "Emphasized",
         },
         "answer": "option_4",
-        "rounds_of_answer": 0
+        "rounds_of_answer": 0,
+        "reference_link": ""
       },
       {
         "question_number": 8,
@@ -261,7 +278,8 @@ var quiz_questions = {
           "option_4": "3",
         },
         "answer": "option_1",
-        "rounds_of_answer": 0
+        "rounds_of_answer": 0,
+        "reference_link": ""
       },
       {
         "question_number": 9,
@@ -274,7 +292,8 @@ var quiz_questions = {
           "option_4": "article",
         },
         "answer": "option_4",
-        "rounds_of_answer": 0
+        "rounds_of_answer": 0,
+        "reference_link": ""
       },
       {
         "question_number": 10,
@@ -287,7 +306,8 @@ var quiz_questions = {
           "option_4": "NaN",
         },
         "answer": "option_3",
-        "rounds_of_answer": 0
+        "rounds_of_answer": 0,
+        "reference_link": ""
       },
     ],
     "javaScript": [
@@ -302,7 +322,8 @@ var quiz_questions = {
           "option_4": "None",
         },
         "answer": "option_3",
-        "rounds_of_answer": 0
+        "rounds_of_answer": 0,
+        "reference_link": ""
       },
       {
         "question_number": 2,
@@ -315,7 +336,8 @@ var quiz_questions = {
           "option_4": "ALL",
         },
         "answer": "option_2",
-        "rounds_of_answer": 0
+        "rounds_of_answer": 0,
+        "reference_link": ""
       },
       {
         "question_number": 3,
@@ -328,7 +350,8 @@ var quiz_questions = {
           "option_4": "None",
         },
         "answer": "option_3",
-        "rounds_of_answer": 0
+        "rounds_of_answer": 0,
+        "reference_link": ""
       },
       {
         "question_number": 4,
@@ -341,7 +364,8 @@ var quiz_questions = {
           "option_4": "search()",
         },
         "answer": "option_2",
-        "rounds_of_answer": 0
+        "rounds_of_answer": 0,
+        "reference_link": ""
       },
       {
         "question_number": 5,
@@ -354,7 +378,8 @@ var quiz_questions = {
           "option_4": "add()",
         },
         "answer": "option_2",
-        "rounds_of_answer": 0
+        "rounds_of_answer": 0,
+        "reference_link": ""
       },
       {
         "question_number": 6,
@@ -367,7 +392,8 @@ var quiz_questions = {
           "option_4": "marge()",
         },
         "answer": "option_2",
-        "rounds_of_answer": 0
+        "rounds_of_answer": 0,
+        "reference_link": ""
       },
       {
         "question_number": 7,
@@ -380,7 +406,8 @@ var quiz_questions = {
           "option_4": "ALL",
         },
         "answer": "option_1",
-        "rounds_of_answer": 0
+        "rounds_of_answer": 0,
+        "reference_link": ""
       },
       {
         "question_number": 8,
@@ -393,7 +420,8 @@ var quiz_questions = {
           "option_4": "onchange",
         },
         "answer": "option_3",
-        "rounds_of_answer": 0
+        "rounds_of_answer": 0,
+        "reference_link": ""
       },
       {
         "question_number": 9,
@@ -406,7 +434,8 @@ var quiz_questions = {
           "option_4": "Values 0-10",
         },
         "answer": "option_1",
-        "rounds_of_answer": 0
+        "rounds_of_answer": 0,
+        "reference_link": ""
       },
       {
         "question_number": 10,
@@ -418,8 +447,9 @@ var quiz_questions = {
           "option_3": "2",
           "option_4": "3",
         },
-        "answer": "",
-        "rounds_of_answer": 0
+        "answer": "option_2",
+        "rounds_of_answer": 0,
+        "reference_link": ""
       },
     ]
   }
@@ -702,11 +732,29 @@ var quiz_questions = {
        // Populate content for results page
        populate_results();
 
+       // Populate content for results_modal
+       populate_modal();
+
        // Toggle state to result_qns_state
        toggle_state('answering_qns_state', 'result_qns_state');
       }
     }
  }, 1000);
+}
+
+// Function to populate content for the modal
+function populate_modal(){
+  console.log("Populating content for the modal");
+  // To search for the value of the correct option for the current question and display it in the modal
+  var current_answer = quiz_questions.topics[topic_quiz][current_qns_count].answer;
+  console.log("Current question answer is " + current_answer);
+  var current_answer_value = quiz_questions.topics[topic_quiz][current_qns_count].options[current_answer];
+  console.log("Current answer value is " + current_answer_value);
+  document.getElementById('modal_correct_answer').innerHTML = "Answer is: " + current_answer_value;
+
+  // Display the reference link in the modal
+  document.getElementById('modal_answer_reference_link').href = quiz_questions.topics[topic_quiz][current_qns_count].reference_link;
+  console.log("Finished populating content for the modal");
 }
 
  // Function to handle option1 click event
@@ -826,6 +874,9 @@ function option1_handler(){
       // Populate content for results page
       populate_results();
       console.log("Populated results for results page");
+
+      // Populate content for results_modal
+      populate_modal();
 
       // Toggle state to result_qns_state
       toggle_state('answering_qns_state', 'result_qns_state');
@@ -950,6 +1001,9 @@ function option2_handler(){
       // Populate content for results page
       populate_results();
       console.log("Populated results for results page");
+
+      // Populate content for results_modal
+      populate_modal();
 
       // Toggle state to result_qns_state
       toggle_state('answering_qns_state', 'result_qns_state');
@@ -1078,6 +1132,9 @@ function option3_handler(){
       populate_results();
       console.log("Populated results for results page");
 
+      // Populate content for results_modal
+      populate_modal();
+
       // Toggle state to result_qns_state
       toggle_state('answering_qns_state', 'result_qns_state');
 
@@ -1205,6 +1262,9 @@ function option4_handler(){
       populate_results();
       console.log("Populated results for results page");
 
+      // Populate content for results_modal
+      populate_modal();
+
       // Toggle state to result_qns_state
       toggle_state('answering_qns_state', 'result_qns_state');
 
@@ -1251,6 +1311,9 @@ function skip_button_handler(){
     // Populate content for results page
     populate_results();
     console.log("Populated results for results page");
+
+    // Populate content for results_modal
+    populate_modal();
 
     // Toggle state to result_qns_state
     toggle_state('answering_qns_state', 'result_qns_state');
