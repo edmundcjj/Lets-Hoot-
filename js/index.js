@@ -742,6 +742,14 @@ var quiz_questions = {
  }, 1000);
 }
 
+// Function to remove event listeners for all options once an option has been selected
+function remove_options_event_listeners(){
+  document.getElementById('answering_option_1').removeEventListener('click', option1_handler);
+  document.getElementById('answering_option_2').removeEventListener('click', option2_handler);
+  document.getElementById('answering_option_3').removeEventListener('click', option3_handler);
+  document.getElementById('answering_option_4').removeEventListener('click', option4_handler);
+}
+
 // Function to populate content for the modal
 function populate_modal(){
   console.log("Populating content for the modal");
@@ -763,7 +771,12 @@ function populate_modal(){
 
  // Function to handle option1 click event
 function option1_handler(){
+  // Stop the timer from counting down
   clearInterval(timer);
+
+  // Remove event listeners for all options once an option has been chosen
+  remove_options_event_listeners();
+
   if (players.player1.answering_now === true && players.player2.answering_now === false) {
     // Update player1 answer_chosen object attribute
     players.player1.answer_chosen = "option_1";
@@ -895,7 +908,12 @@ function option1_handler(){
 
  // Function to handle option2 click event
 function option2_handler(){
+  // Stop the timer from counting down
   clearInterval(timer);
+
+  // Remove event listeners for all options once an option has been chosen
+  remove_options_event_listeners();
+
   if (players.player1.answering_now === true && players.player2.answering_now === false) {
     // Update player1 answer_chosen object attribute
     players.player1.answer_chosen = "option_2";
@@ -1022,7 +1040,12 @@ function option2_handler(){
 
  // Function to handle option3 click event
 function option3_handler(){
+  // Stop the timer from counting down
   clearInterval(timer);
+
+  // Remove event listeners for all options once an option has been chosen
+  remove_options_event_listeners();
+
   if (players.player1.answering_now === true && players.player2.answering_now === false) {
     // Update player1 answer_chosen object attribute
     players.player1.answer_chosen = "option_3";
@@ -1152,7 +1175,12 @@ function option3_handler(){
 
  // Function to handle option4 click event
 function option4_handler(){
+  // Stop the timer from counting down
   clearInterval(timer);
+
+  // Remove event listeners for all options once an option has been chosen
+  remove_options_event_listeners();
+
   if (players.player1.answering_now === true && players.player2.answering_now === false) {
     // Update player1 answer_chosen object attribute
     players.player1.answer_chosen = "option_4";
@@ -1504,20 +1532,11 @@ function replay_game_handler(){
   // Reset current_qns_count to 0
   current_qns_count = 0;
 
-  // Reset certain player1 and 2 object attributes
-  players.player1.current_pts = 0;
-  players.player1.total_pts = 0;
-  players.player1.answer_chosen = "";
-  players.player1.answer_correct = false;
-  players.player1.answering_now = false;
-  players.player1.correct_answers = 0;
+  // Increment replay counter by 1 to indicate how many times the game has been replayed
+  replay_counter += 1;
 
-  players.player2.current_pts = 0;
-  players.player2.total_pts = 0;
-  players.player2.answer_chosen = "";
-  players.player2.answer_correct = false;
-  players.player2.answering_now = false;
-  players.player2.correct_answers = 0;
+  // Reset certain player1 and 2 object attributes
+  reset_players_object();
 
   // Reset get_ready_qns_state progress loader bar width to 0%
   document.getElementById('progress_bar').style.width = "0%";
@@ -1525,9 +1544,6 @@ function replay_game_handler(){
   // Populate content for display_game_details_state
   document.getElementById('player1_name_display').innerHTML = "P1: " + players.player1.nickname;
   document.getElementById('player2_name_display').innerHTML = "P2: " + players.player2.nickname;
-
-  // Increment replay counter by 1 to indicate how many times the game has been replayed
-  replay_counter += 1;
 
   // Toggle state to display_game_details_state
   toggle_state('gameover_state', 'display_game_details_state');
@@ -1539,28 +1555,49 @@ function replay_game_handler(){
 
 // Function to reset players object attributes
 function reset_players_object(){
-  // Reset players object
-  players.player1.nickname = "";
-  players.player1.current_pts = 0;
-  players.player1.total_pts = 0;
-  players.player1.answer_chosen = "";
-  players.player1.answer_correct = false;
-  players.player1.answering_now = false;
-  players.player1.correct_answers = 0;
+  if (replay_counter > 0) {
+    // Reset all the attributes of players 1 and 2 excluding their nicknames
+    players.player1.current_pts = 0;
+    players.player1.total_pts = 0;
+    players.player1.answer_chosen = "";
+    players.player1.answer_correct = false;
+    players.player1.answering_now = false;
+    players.player1.correct_answers = 0;
 
-  players.player2.nickname = "";
-  players.player2.current_pts = 0;
-  players.player2.total_pts = 0;
-  players.player2.answer_chosen = "";
-  players.player2.answer_correct = false;
-  players.player2.answering_now = false;
-  players.player2.correct_answers = 0;
+    players.player2.current_pts = 0;
+    players.player2.total_pts = 0;
+    players.player2.answer_chosen = "";
+    players.player2.answer_correct = false;
+    players.player2.answering_now = false;
+    players.player2.correct_answers = 0;
+  }
+  else if (reset_counter > 0) {
+    // Reset all the attributes of players 1 and 2
+    players.player1.nickname = "";
+    players.player1.current_pts = 0;
+    players.player1.total_pts = 0;
+    players.player1.answer_chosen = "";
+    players.player1.answer_correct = false;
+    players.player1.answering_now = false;
+    players.player1.correct_answers = 0;
+
+    players.player2.nickname = "";
+    players.player2.current_pts = 0;
+    players.player2.total_pts = 0;
+    players.player2.answer_chosen = "";
+    players.player2.answer_correct = false;
+    players.player2.answering_now = false;
+    players.player2.correct_answers = 0;
+  }
 }
 
 // Function to hndle reset button click event
 function reset_game_handler(){
   // Reset current_qns_count to 0
   current_qns_count = 0;
+
+  // Increment reset_counter by 1
+  reset_counter += 1;
 
   // Reset players object data values
   reset_players_object();
@@ -1575,15 +1612,6 @@ function reset_game_handler(){
   // Reset drop down list to default in set_game_details_state
   document.getElementById("topic_quiz_selection").selectedIndex = "0";
   document.getElementById("difficulty_level_selection").selectedIndex = "0";
-
-  // // Reset content for get_ready_qns_state to it's default state
-  // var qns_number_header = document.getElementsByClassName('getready_header');
-  // qns_number_header.removeChild(qns_number_header.firstChild);
-  // var qns_name = document.getElementsByClassName('game_qns_title_main');
-  // qns_name.removeChild(qns_name.firstChild);
-
-  // Increment reset_counter by 1
-  reset_counter += 1;
 
   // Toggle state to set_player_details_state
   toggle_state('gameover_state', 'set_player_details_state');
@@ -1622,10 +1650,6 @@ function populate_gameover(){
     document.getElementById('podium_1st_qns_correct').innerHTML = players.player2.correct_answers + " out of 10";
   }
 }
-
-// Function to start podium animation
-// function start_podium_animation(){
-// }
 
 // Function to handle click event for next button in result_qns_state - populate content for scoreboard
 function results_nextbt_handler(){
