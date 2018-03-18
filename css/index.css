@@ -559,8 +559,8 @@ No media query since this is the default in Bootstrap */
     width: 2.5em;
   }
   .answering_qns_img{
-    height: 400px;
-    width: 500px;
+    height: 300px;
+    width: 400px;
   }
   .btn{
     font-size: 2rem;
@@ -749,8 +749,8 @@ No media query since this is the default in Bootstrap */
     width: 2.5em;
   }
   .answering_qns_img{
-    height: 500px;
-    width: 700px;
+    height: 400px;
+    width: 500px;
   }
   .game_answering_header > h5{
     font-size: 2.5rem;
